@@ -1,0 +1,26 @@
+.swiper {
+  min-height: 100vh;
+  .swiper-slide {
+    position: relative;
+    opacity: 0;
+    z-index: 1;
+    &.welcome {
+      background: var(--bg);
+    }
+    &.dark {
+      background: var(--bg-dark);
+    }
+    &.light {
+      background: var(--bg-light);
+      color: var(--bg);
+    }
+    &.form {
+      background: var(--bg-form);
+      color: var(--bg);
+      h2,
+      b {
+        color: var(--bg);
+      }
+    }
+  }
+}
