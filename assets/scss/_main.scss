@@ -38,3 +38,9 @@
     max-width: 500px;
   }
 }
+
+@media (max-width: 767px) {
+  .content {
+    max-width: 375px;
+  }
+}

@@ -80,3 +80,9 @@ a {
   width: 100%;
   height: auto;
 }
+
+@media (max-width: 767px) {
+  .del_in_mobil {
+    display: none;
+  }
+}

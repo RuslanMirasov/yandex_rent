@@ -1,3 +1,5 @@
+import { scrollToBlock } from './scrollToBlock.js';
+
 const switchers = document.querySelectorAll('[data-switcher]');
 const nextButtons = document.querySelectorAll('[data-next]');
 const allSlides = document.querySelectorAll('.swiper-slide');
@@ -37,6 +39,8 @@ const changeTheme = theme => {
 
 const goToNextSlide = () => {
   if (!slideCollection.length) return;
+  if (window.scrollY > 0) scrollToBlock('body', 600);
+
   const currentHash = window.location.hash.split('#')[1] || slideCollection[0].hash;
   const currentIndex = slideCollection.find(slide => slide.hash === currentHash).index;
 
@@ -46,11 +50,13 @@ const goToNextSlide = () => {
 };
 
 const turnOnTheLight = () => {
-  document.body.classList.add('on');
+  const isMobil = window.outerWidth < 768;
+  const duration = isMobil ? 0 : 500;
+  !isMobil && document.body.classList.add('on');
   setTimeout(() => {
     goToNextSlide();
-    document.body.classList.remove('on');
-  }, 500);
+    !isMobil && document.body.classList.remove('on');
+  }, duration);
 };
 
 document.addEventListener('DOMContentLoaded', onHashChange);

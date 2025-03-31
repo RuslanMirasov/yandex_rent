@@ -66,10 +66,11 @@
         width: 80px;
       }
     }
-    .title,
-    .subtitle {
+    .subtitle,
+    .title {
       order: 2;
       padding-right: 60px;
+      max-width: 335px;
     }
   }
 
