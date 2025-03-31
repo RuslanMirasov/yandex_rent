@@ -1,0 +1,99 @@
+.tutorial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  padding: myclamp(22px, 70px, 1920px, 3860px) 0px myclamp(22px, 100px, 1920px, 3860px) 0px;
+  h2 {
+    display: inline-block;
+    position: relative;
+    width: auto;
+  }
+
+  .text-content--auto {
+    gap: myclamp(14px, 40px, 1920px, 3860px);
+    display: inline-flex;
+    max-width: myclamp(375px, 580px, 1920px, 3860px);
+    .subtitle {
+      font-size: myclamp(18px, 30px, 1920px, 3860px);
+      &:last-child {
+        margin-top: myclamp(20px, 30px, 1920px, 3860px);
+      }
+    }
+    .tutorial_arrow {
+      left: 92%;
+      top: 76%;
+    }
+  }
+}
+
+.tutorial_arrow {
+  position: absolute;
+  left: 105%;
+  top: 70%;
+  width: myclamp(110px, 175px, 1920px, 3860px);
+}
+
+.tutorialImage {
+  position: absolute;
+  right: myclamp(20px, 40px, 1920px, 3860px);
+  width: myclamp(240px, 404px, 1920px, 3860px);
+  height: myclamp(168px, 354px, 1920px, 3860px);
+  &.tutorialImage--light {
+    width: myclamp(156px, 320px, 1920px, 3860px);
+    height: myclamp(194px, 398px, 1920px, 3860px);
+  }
+}
+
+//============================== RESPONSIVE
+
+@media (max-width: 1023px), (orientation: portrait) {
+  .tutorial {
+    margin: 0;
+    flex-wrap: wrap;
+
+    .text-content--auto {
+      order: 2;
+      .subtitle {
+        font-size: 14px;
+      }
+      .tutorial_arrow {
+        left: auto;
+        top: auto;
+        width: 80px;
+      }
+    }
+    .title,
+    .subtitle {
+      order: 2;
+      padding-right: 60px;
+    }
+  }
+
+  .tutorial_arrow {
+    width: 100px;
+    left: auto;
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+    transform: rotate(20deg);
+    margin-left: auto;
+  }
+
+  .tutorialImage {
+    position: relative;
+    right: auto;
+    width: 100%;
+    height: auto;
+    order: 1;
+    margin-bottom: 20px;
+    &.tutorialImage--light {
+      width: 100%;
+      height: auto;
+      order: 1;
+    }
+  }
+}

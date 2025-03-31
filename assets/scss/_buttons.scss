@@ -1,39 +1,170 @@
 .button {
   display: flex;
+  width: 100%;
+  height: myclamp(72px, 90px, 1920px, 3860px);
   justify-content: center;
   align-items: center;
   align-content: center;
   position: relative;
-  font-size: clamp(24px, 2.3438vw, 60px); //45px
+  font-size: myclamp(20.45px, 36px, 1920px, 3860px);
   line-height: 1;
   color: var(--white);
-  background: var(--orange);
+  background-color: var(--orange);
   font-family: var(--bold);
-  border-radius: 50px;
-  padding: 20px;
-  min-width: clamp(180px, 18.75vw, 480px);
-  gap: 18px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  transform: translate(0px, 0px);
-  transition: 0.2s;
-  &:after {
+  border-radius: 100px;
+  transition: box-shadow 0.3s, background-color 0.3s, color 0.3s, opacity 0.6s;
+  letter-spacing: 0.02em;
+  z-index: 5;
+  &.button--yellow {
+    background-color: var(--bg-form);
+    color: var(--viola);
+    border: 2px solid var(--viola);
+  }
+  &.button--light {
+    box-shadow: 0px 0px 40px var(--orange);
+    &:hover {
+      box-shadow: 0px 0px 80px var(--orange);
+    }
+  }
+  &.lightning {
+    &:after {
+      content: '';
+      width: myclamp(20px, 30px, 1920px, 3860px);
+      height: myclamp(28px, 40px, 1920px, 3860px);
+      margin-left: myclamp(14px, 26px, 1920px, 3860px);
+      background: url('../img/svg/lightning.svg') no-repeat center center/cover;
+    }
+  }
+}
+
+.swiper-slide {
+  .button {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
+.get-present-button {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: myclamp(110px, 140px, 1920px, 3860px);
+  margin-top: myclamp(10px, 10px, 1920px, 3860px);
+  margin-bottom: myclamp(10px, 30px, 1920px, 3860px);
+  z-index: 5;
+  transition: opacity 0.6s;
+  opacity: 0;
+  &:before {
     content: '';
     display: block;
-    width: 66px;
-    height: 46px;
-    background: url('../img/svg/button-arrow.svg') no-repeat center center/cover;
-    position: relative;
-    transition: 0.3s;
-    transform: translate(10px, 0px);
+    width: 100%;
+    padding-top: 88.5%;
   }
 
-  &:active {
-    transform: translate(0px, 3px);
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  .icon {
+    position: absolute;
+    top: 0px;
+    transition: 0.6s;
   }
+
+  img {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: transform 0.4s, opacity 0.6s;
+  }
+
   &:hover {
-    &:after {
-      transform: translate(20px, 0px);
+    img.presentBox {
+      transform: translate(5px, 15px) rotate(10deg);
     }
+    img.presentLid {
+      transform: translate(-5px, -5px) rotate(-10deg);
+    }
+  }
+}
+
+.swiper-slide-active {
+  .get-present-button {
+    opacity: 1;
+    transition: background-color 0.3s, opacity 0.6s ease-in-out 0.6s;
+  }
+}
+
+//============================= SUBMIT BUTTON
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  transition: 0.3s;
+  height: myclamp(50px, 90px, 1920px, 3860px);
+  border-radius: myclamp(25px, 45px, 1920px, 3860px);
+  opacity: 1;
+  background: var(--viola);
+  color: var(--white);
+  padding: 10px myclamp(20px, 30px, 1920px, 3860px);
+  z-index: 1;
+  span {
+    font-family: var(--bold);
+    flex: 1;
+    font-size: myclamp(26px, 36px, 1920px, 3860px);
+    line-height: 1;
+  }
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  &:before,
+  &:after {
+    content: '';
+    width: myclamp(0px, 24px, 1920px, 3860px);
+    height: myclamp(0px, 40px, 1920px, 3860px);
+    background: url('../img/svg/romb.svg') no-repeat center center/cover;
+    @media (max-width: 1023px) {
+      content: none;
+    }
+  }
+
+  &:hover {
+    background: var(--orange);
+  }
+}
+
+//==================================== RESPONSIVE
+
+@media (max-width: 1023px), (orientation: portrait) {
+  .button {
+    line-height: 1.1;
+    letter-spacing: 0em;
+
+    &.button--yellow {
+      border: none;
+      background-color: #ffe25f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &.button--light {
+      box-shadow: 0px 0px 30px var(--orange);
+      &:hover {
+        box-shadow: 0px 0px 60px var(--orange);
+      }
+    }
+  }
+
+  .swiper-slide {
+    .button {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
+
+  .get-present-button {
+    display: none;
   }
 }

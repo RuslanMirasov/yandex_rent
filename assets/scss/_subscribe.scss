@@ -1,0 +1,128 @@
+.subscribe {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+  margin-bottom: auto;
+  @media (max-width: 1023px) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.subscribe__sidebar {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: myclamp(375px, 540px, 1920px, 3860px);
+  gap: myclamp(20px, 30px, 1920px, 3860px);
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+}
+
+.subscribe__form {
+  display: inline-flex;
+  width: myclamp(375px, 520px, 1920px, 3860px);
+  max-width: 100%;
+  flex-direction: column;
+  gap: myclamp(24px, 30px, 1920px, 3860px);
+  padding-bottom: myclamp(0px, 24px, 1920px, 3860px);
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 30px;
+  }
+
+  form {
+    display: flex;
+    width: 100%;
+    max-width: myclamp(375px, 450px, 1920px, 3860px);
+    flex-direction: column;
+    gap: myclamp(20px, 32px, 1920px, 3860px);
+    .rules {
+      text-align: center;
+      font-family: var(--regular);
+      font-size: myclamp(10px, 14px, 1920px, 3860px);
+      line-height: 1;
+      text-decoration: underline;
+    }
+    @media (max-width: 1023px) {
+      max-width: 100%;
+      gap: 26px;
+    }
+  }
+
+  label {
+    display: block;
+    position: relative;
+    user-select: none;
+  }
+}
+
+.popup {
+  .subscribe__form form .rules {
+    text-align: left;
+  }
+}
+
+.subscribe__image {
+  display: block;
+  position: absolute;
+  left: myclamp(0px, 54px, 1920px, 3860px);
+  bottom: myclamp(0px, 0px, 1920px, 3860px);
+  width: myclamp(375px, 800px, 1920px, 3860px);
+  max-width: 53%;
+  &.final {
+    left: myclamp(0px, 20px, 1920px, 3860px);
+    bottom: auto;
+    top: myclamp(0px, 170px, 1920px, 3860px);
+  }
+  @media (max-width: 1366px) {
+    max-width: 48%;
+  }
+  @media (max-width: 1279px) {
+    max-width: 42%;
+    bottom: auto;
+    top: 30%;
+  }
+  @media (max-width: 1023px) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    left: 0px;
+    bottom: auto;
+    top: auto;
+    margin-top: 20px;
+  }
+}
+
+.popup {
+  .subscribe__image {
+    left: myclamp(0px, 20px, 1920px, 3860px);
+    bottom: myclamp(0px, 40px, 1920px, 3860px);
+  }
+}
+
+.prizes {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+}
+
+.slideImage--fobia3-done {
+  width: myclamp(375px, 720px, 1920px, 3860px);
+  max-width: 55%;
+  height: auto;
+  left: myclamp(0px, 60px, 1920px, 3860px);
+  bottom: myclamp(0px, 20px, 1920px, 3860px);
+  img {
+    position: relative;
+    height: auto;
+    max-height: 2000px;
+  }
+}

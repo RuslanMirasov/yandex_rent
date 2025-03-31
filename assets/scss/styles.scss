@@ -1,285 +1,77 @@
+:root {
+  --regular: 'Yandex Sans Regular', sans-serif;
+  --medium: 'Yandex Sans Medium', sans-serif;
+  --bold: 'Halvar Breitschrift', sans-serif;
+  --bg: #230057;
+  --slider-bg: #350779;
+  --color: #ffffff;
+  --bg-dark: #350779;
+  --bg-light: #eae0ff;
+  --bg-form: #f8d849;
+  --white: #ffffff;
+  --viola: #7d24ff;
+  --orange: #f97755;
+  --orange-hover: #da5f40;
+  --invalid: red;
+
+  --logo-color: #ffffff;
+  --logo-bg: #230057;
+  --logo-border: #ffffff;
+  --logo-ring: #ffffff;
+  --logo-card: #ffffff;
+  --logo-sub: #230057;
+}
+
+.night {
+  --bg: #230057;
+  --color: #ffffff;
+  --slider-bg: #350779;
+
+  --logo-color: #ffffff;
+  --logo-bg: #230057;
+  --logo-border: #ffffff;
+  --logo-ring: #ffffff;
+  --logo-card: #ffffff;
+  --logo-sub: #230057;
+}
+
+.day {
+  --bg: #eae0ff;
+  --color: #7d24ff;
+  --slider-bg: #f6f0ff;
+
+  --logo-color: #000000;
+  --logo-bg: #cbb1ff;
+  --logo-border: #cbb1ff;
+  --logo-ring: #ffffff;
+  --logo-card: #7d24ff;
+  --logo-sub: #cbb1ff;
+}
+
+.form {
+  --bg: #eae0ff;
+  --color: #7d24ff;
+  --slider-bg: #f8d849;
+
+  --logo-color: #000000;
+  --logo-bg: #cbb1ff;
+  --logo-border: #cbb1ff;
+  --logo-ring: #ffffff;
+  --logo-card: #7d24ff;
+  --logo-sub: #cbb1ff;
+}
+
+@import 'mixins';
 @import 'fonts';
 @import 'reset';
-@import 'typography';
+@import 'main';
+@import 'header';
 @import 'buttons';
+@import 'bg';
+@import 'typography';
+@import 'tutorial';
 @import 'slideImages';
+@import 'subscribe';
+@import 'forms';
 @import 'swiper';
-
-.logo {
-  display: block;
-  transition: 0.3s;
-  width: clamp(150px, 12.29vw, 315px);
-}
-
-.fobia {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(50px, 3vw, 120px);
-  align-items: flex-start;
-  align-content: flex-start;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 30px 20px;
-
-  @media screen and (min-width: 768px) {
-    padding: clamp(50px, 3.5vw, 120px) 0px;
-    max-width: clamp(960px, 66.6667vw, 1706.67px);
-  }
-
-  .title,
-  .text,
-  .subtitle,
-  button {
-    opacity: 0;
-    transition: opacity 0.6s;
-  }
-}
-
-.swiper-slide-active {
-  .fobia {
-    .title,
-    .text,
-    .subtitle,
-    button {
-      opacity: 1;
-    }
-    .title,
-    .text,
-    .subtitle {
-      transition: opacity 1s;
-    }
-    button {
-      transition: opacity 1s ease-in-out 0.3s, transform 0.2s ease 0s, box-shadow 0.2s ease 0s;
-    }
-  }
-}
-
-.fobia__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex: 1;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  .button {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    z-index: 3;
-  }
-}
-
-.welcome {
-  .text-content {
-    gap: clamp(20px, 3vw, 106.67px);
-    margin: auto;
-  }
-}
-
-.icon--underline {
-  margin-top: 1vh;
-}
-
-.lampWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  align-content: flex-start;
-  position: absolute;
-  height: 100%;
-  width: clamp(180px, 18.75vw, 480px);
-  right: 0px;
-  top: 0px;
-  .lamp {
-    display: block;
-    position: absolute;
-    background: url('../img/light.webp') no-repeat top center;
-    background-size: 718px;
-    width: 1920px;
-    height: 0%;
-    opacity: 0;
-    transition: opacity 0s ease-out 0.4s, height 0s ease-out 0.4s;
-    z-index: -1;
-  }
-}
-.welcome .lampWrapper {
-  width: clamp(110px, 22.3958vw, 573.33px);
-}
-
-.swiper-slide-active .lamp {
-  height: 100%;
-  opacity: 1;
-  transition: opacity 1s ease-out 0.6s, height 0.3s ease-out 0.6s;
-  &.fix {
-    height: 0%;
-    opacity: 0;
-    &.on {
-      height: 100%;
-      opacity: 1;
-      transition: opacity 0.3s ease-out 0s, height 0.3s ease-out 0s;
-    }
-  }
-  &.ready {
-    transition: opacity 0s ease-out 0s, height 0s ease-out 0s;
-  }
-}
-
-.get-present-button {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: clamp(110px, 8.0729vw, 206.67px); //155px
-  &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-top: 100%;
-  }
-
-  .icon {
-    position: absolute;
-    top: 0px;
-  }
-
-  img {
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    transform: translate(0px, 0px) rotate(0deg);
-    transition: 0.4s;
-  }
-
-  &:hover {
-    img.presentBox {
-      transform: translate(5px, 15px) rotate(10deg);
-    }
-    img.presentLid {
-      transform: translate(-5px, -10px) rotate(-10deg);
-    }
-  }
-}
-
-.switcher {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: clamp(110px, 8.0208vw, 205.33px);
-  background: url('../img/switcher_off.webp') no-repeat center center/cover;
-  z-index: 2;
-  &.on {
-    background: url('../img/switcher_on.webp') no-repeat center center/cover;
-    .star {
-      transform: translate(-40%, 260%) rotate(0deg);
-    }
-  }
-  img {
-    position: absolute;
-    pointer-events: none;
-  }
-
-  .indicator {
-    right: 0px;
-    top: 0px;
-    width: 50%;
-    transform: translate(37%, -25%) rotate(-8deg);
-    transition: 0.3s;
-    animation: pulse 1s linear infinite;
-  }
-
-  .star {
-    right: 0px;
-    top: 0px;
-    width: 20%;
-    transform: translate(-40%, 60%) rotate(0deg);
-    transition: 0.3s;
-    opacity: 1;
-  }
-
-  &.big {
-    display: flex;
-    justify-content: center;
-    opacity: 1;
-    position: relative;
-    width: clamp(110px, 22.3958vw, 573.33px);
-    .button {
-      position: absolute;
-      right: auto;
-      transform: translate(0%, -180%) rotate(0deg);
-    }
-    .click-click {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      text-align: left;
-      gap: 14px;
-      position: absolute;
-      right: 0px;
-      top: 0px;
-      font-size: clamp(24px, 2.1875vw, 56px);
-      transform: translate(0%, -114%);
-      svg {
-        width: 78px;
-        position: relative;
-        transform: translate(-30%, 0%);
-      }
-    }
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    padding-top: 94%;
-    pointer-events: none;
-  }
-
-  &:hover {
-    .indicator {
-      opacity: 0;
-    }
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: translate(37%, -25%) rotate(-8deg) scale(1);
-  }
-  50% {
-    transform: translate(37%, -25%) rotate(-8deg) scale(1.2);
-  }
-  100% {
-    transform: translate(37%, -25%) rotate(-8deg) scale(1);
-  }
-}
-
-.tutorial {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  width: 100%;
-  position: relative;
-  margin: auto;
-  padding-bottom: 2vw;
-  h2 span {
-    display: inline-block;
-    position: relative;
-    width: auto;
-  }
-}
-
-.tutorial_arrow {
-  position: absolute;
-  left: 80%;
-  top: 85%;
-  width: 65%;
-}
+@import 'popup';

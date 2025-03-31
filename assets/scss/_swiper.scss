@@ -1,26 +1,79 @@
-.swiper {
-  min-height: 100vh;
-  .swiper-slide {
+.swiper-slide {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: myclamp(0px, 54px, 1920px, 3860px);
+  padding-left: myclamp(20px, 60px, 1920px, 3860px);
+  padding-right: myclamp(20px, 60px, 1920px, 3860px);
+  padding-bottom: myclamp(30px, 90px, 1920px, 3860px);
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - myclamp(20px, 80px, 1920px, 3860px) - myclamp(70px, 120px, 1920px, 3860px));
+  user-select: none;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: opacity 0.6s;
+  &.swiper-slide--final {
+    padding-bottom: 0px;
+  }
+  &.swiper-slide-active {
     position: relative;
-    opacity: 0;
+    overflow: visible;
+    z-index: 2;
+    opacity: 1;
+  }
+  .title.title--h2 {
+    margin-top: myclamp(0px, -14px, 1920px, 3860px);
+  }
+}
+
+.more-about-us {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  gap: myclamp(20px, 24px, 1920px, 3860px);
+  justify-content: space-between;
+  color: var(--white);
+  //background-color: var(--viola);
+
+  padding: myclamp(20px, 22px, 1920px, 3860px) 0px;
+  transform: translate(0px, myclamp(50px, 80px, 1920px, 3860px));
+  margin-top: myclamp(50px, -32px, 1920px, 3860px);
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: myclamp(0px, -60px, 1920px, 3860px);
+    right: myclamp(0px, -60px, 1920px, 3860px);
+    z-index: 0;
+    background: var(--viola);
+    border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
+  }
+  p {
+    position: relative;
     z-index: 1;
-    &.welcome {
-      background: var(--bg);
+    font-size: myclamp(14px, 22px, 1920px, 3860px);
+    line-height: 1.4;
+    span {
+      color: var(--bg-form);
     }
-    &.dark {
-      background: var(--bg-dark);
+    &.more-about-us-left {
+      width: myclamp(0px, 540px, 1920px, 3860px);
     }
-    &.light {
-      background: var(--bg-light);
-      color: var(--bg);
+    &.more-about-us-right {
+      width: myclamp(0px, 520px, 1920px, 3860px);
     }
-    &.form {
-      background: var(--bg-form);
-      color: var(--bg);
-      h2,
-      b {
-        color: var(--bg);
-      }
-    }
+  }
+  .button {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--white);
   }
 }

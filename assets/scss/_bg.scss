@@ -1,0 +1,87 @@
+.background {
+  display: block;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+  > div {
+    transition: opacity 0.6s;
+  }
+  .background__night,
+  .background__day {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 70%;
+    height: 100%;
+    opacity: 0;
+  }
+  .background__night {
+    background: url('../img/web.webp') no-repeat right top/cover;
+  }
+  .background__day {
+    background: url('../img/sun.webp') no-repeat right top/cover;
+  }
+}
+
+.night {
+  .background__night {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out 0.3s;
+  }
+}
+
+.day {
+  .background__day {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out 0.3s;
+  }
+}
+
+.foregrounds {
+  display: block;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+
+.light {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s;
+  background: url('../img/light.webp') no-repeat right top/cover;
+  pointer-events: none;
+  &.light--animated {
+    width: 0%;
+    transition: opacity 0.5s ease-in-out 0s, width 0s linear 0.5s;
+    background: url('../img/svg/light.svg') no-repeat right top/cover;
+  }
+}
+
+.day {
+  .light {
+    opacity: 1;
+    &.light--animated {
+      opacity: 0;
+      width: 0%;
+    }
+  }
+}
+
+.on .light.light--animated {
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s, width 0.5s;
+}

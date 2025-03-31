@@ -1,107 +1,52 @@
 .slideImage {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  align-content: flex-end;
+  display: block;
   position: absolute;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.6s;
   right: 0px;
   bottom: 0px;
-  width: clamp(180px, 18.75vw, 480px);
+  width: 100%;
   height: 100%;
-  overflow: visible;
   img {
     position: relative;
-    max-width: 1920px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
 .swiper-slide-active .slideImage {
   opacity: 1;
-  transition: opacity 1s ease-out 0.9s;
 }
 
-.slideImage {
-  &.slideImage--fobia7-done {
-    justify-content: flex-end;
+.slideImage--welcome {
+  width: 50%;
+  height: calc(100vh - myclamp(0px, 90px, 1920px, 3860px) - myclamp(0px, 80px, 1920px, 3860px));
+  right: myclamp(0px, -40px, 1920px, 3860px);
+  top: myclamp(0px, -120px, 1920px, 3860px);
+  bottom: auto;
+}
+
+@media (max-width: 1023px), (orientation: portrait) {
+  .slideImage {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    height: auto;
     img {
-      height: clamp(420px, 52.2222vh, 752px);
-      transform: translate(6%, 0%);
+      height: auto;
     }
   }
-  &.slideImage--fobia7 {
-    justify-content: flex-end;
-    img {
-      height: clamp(480px, 59.7222vh, 860px);
-    }
-  }
-  &.slideImage--fobia6-done {
-    justify-content: flex-end;
-    img {
-      height: clamp(400px, 50vh, 720px);
-      transform: translate(10%, 0%);
-    }
-  }
-  &.slideImage--fobia6 {
-    justify-content: flex-end;
-    img {
-      height: clamp(400px, 50vh, 720px);
-    }
-  }
-  &.slideImage--fobia5-done {
-    img {
-      height: clamp(450px, 56.0185vh, 806.67px);
-      transform: translate(-7%, 0%);
-    }
-  }
-  &.slideImage--fobia5 {
-    justify-content: flex-end;
-    img {
-      height: clamp(450px, 56.0185vh, 806.67px);
-      transform: translate(-25%, 0%);
-    }
-  }
-  &.slideImage--fobia4-done {
-    justify-content: flex-end;
-    img {
-      height: clamp(500px, 62.5926vh, 901.33px);
-    }
-  }
-  &.slideImage--fobia4 {
-    justify-content: flex-end;
-    img {
-      height: clamp(380px, 47.037vh, 677.33px);
-    }
-  }
-  &.slideImage--fobia3 {
-    justify-content: flex-end;
-    img {
-      height: clamp(600px, 74.4444vh, 1072px);
-    }
-  }
-  &.slideImage--fobia2-done {
-    img {
-      height: clamp(340px, 42.5926vh, 613.33px);
-      transform: translate(-10%, 0%);
-    }
-  }
-  &.slideImage--fobia2 {
-    justify-content: flex-end;
-    img {
-      height: clamp(360px, 45.3704vh, 653.33px);
-    }
-  }
-  &.slideImage--fobia1 {
-    img {
-      height: clamp(400px, 50.9259vh, 733.33px);
-    }
-  }
-  &.slideImage--welcome {
-    img {
-      height: 100%;
-    }
+
+  .slideImage--welcome {
+    width: 100%;
+    height: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin-bottom: auto;
+    margin-top: 20px;
   }
 }

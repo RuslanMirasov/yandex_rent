@@ -1,62 +1,125 @@
 .text-content {
   display: flex;
   position: relative;
-  gap: clamp(20px, 1.5vw, 53.33px);
+  gap: myclamp(14px, 40px, 1080px, 3860px, vh);
   flex-direction: column;
   width: 100%;
   z-index: 1;
+  &.first {
+    margin-bottom: auto;
+    padding: myclamp(20px, 40px, 1080px, 3860px) 0px;
+  }
 }
 
 .title {
   display: block;
-  color: var(--orange);
+  transition: color 0.6s opacity 0.6s;
 
   &.title--h1 {
-    font-size: clamp(36px, 5.2vw, 133px); //100px
+    font-size: myclamp(32px, 80px, 1920px, 3860px);
     line-height: 0.95;
-    color: var(--white);
   }
 
   &.title--h2 {
-    font-size: clamp(32px, 3.125vw, 80px); //60px
-    line-height: 1.05;
+    font-size: myclamp(32px, 52px, 1920px, 3860px);
+    line-height: 1;
   }
 
   &.title--h3 {
-    font-size: clamp(24px, 2.3438vw, 60px); //45px
-    line-height: 1.1;
-    color: var(--white);
+    font-size: myclamp(20px, 56px, 1920px, 3860px);
+    line-height: 1;
   }
 
   &.title--h4 {
-    font-size: clamp(20px, 1.875vw, 48px); //36px
+    font-size: myclamp(20px, 45px, 1920px, 3860px);
     line-height: 1.1;
+    margin: auto 0px;
   }
 
   &.title--h5 {
-    font-size: 25px;
+    font-size: myclamp(16px, 34px, 1920px, 3860px);
     line-height: 1.1;
-    letter-spacing: -0.03em;
-  }
-
-  &.title--h6 {
-    font-size: 20px;
-    line-height: 1.2;
+    span {
+      opacity: 0.2;
+    }
   }
 }
 
 .subtitle {
   display: block;
-  font-size: clamp(18px, 1.67vw, 42.7px); //32px
+  font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out 0s;
   span {
     display: inline-block;
+    position: relative;
     width: auto;
+    img {
+      position: absolute;
+      left: 0px;
+      top: 120%;
+    }
   }
 }
 
 .text {
+  font-family: var(--medium);
   display: block;
-  font-size: clamp(16px, 1.56vw, 40px); //30px
+  position: relative;
+  font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out 0s;
+}
+
+.dop {
+  position: absolute;
+  right: myclamp(10px, 60px, 1920px, 3860px);
+  bottom: myclamp(10px, 110px, 1920px, 3860px);
+  font-size: myclamp(10px, 12px, 1920px, 3860px);
+  padding-left: myclamp(0px, 250px, 1920px, 3860px);
+  padding-top: myclamp(0px, 30px, 1920px, 3860px);
+  line-height: 1.4;
+  color: #909090;
+  a {
+    display: inline;
+    text-decoration: underline;
+  }
+}
+
+.swiper-slide {
+  .text,
+  .subtitle {
+    opacity: 0;
+  }
+  &.swiper-slide-active {
+    .text,
+    .subtitle {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1023px), (orientation: portrait) {
+  .title {
+    &.title--h1 {
+      margin-top: 70px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .text-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title,
+  .subtitle,
+  .text {
+    br {
+      display: none;
+    }
+  }
 }

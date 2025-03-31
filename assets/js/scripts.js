@@ -1,59 +1,30 @@
-const slider = document.querySelector('.fobias');
+import { initPopups, PopupManager } from './popup-manager.js';
+import { initConnect, initSprites } from './connect.js';
 
-const swiper = new Swiper(slider, {
-  effect: 'fade',
-  autoHeight: true,
-  lazy: {
-    loadOnTransitionStart: true,
-    loadPrevNext: true,
-    loadPrevNextAmount: 1,
-  },
-  allowTouchMove: false,
-  on: {
-    slideChange: () => {
-      const currentSlide = swiper.slides[swiper.activeIndex];
-      const fobia = currentSlide.dataset.fobia;
-
-      if (fobia) {
-        const newHash = `#fobia-${fobia}`;
-        if (window.location.hash !== newHash) {
-          history.replaceState(null, '', newHash);
-        }
-      }
-    },
-  },
-});
-
-const slideNext = e => {
-  if (e.target.dataset.js !== 'next' && e.target.dataset.js !== 'on') return;
-  if (e.target.dataset.js === 'on') {
-    e.target.classList.add('on');
-    const lamp = e.target.closest('.swiper-slide').querySelector('.lamp');
-    lamp.classList.add('on');
-    console.log(lamp);
-    setTimeout(() => {
-      swiper.slideNext();
-    }, 300);
+document.addEventListener('click', e => {
+  const trigger = e.target.closest('[data-popup-open]');
+  if (trigger) {
+    e.preventDefault();
+    const popupId = trigger.getAttribute('data-popup-open');
+    if (popupId) PopupManager.open(popupId);
     return;
   }
-  swiper.slideNext();
-};
 
-const changeHash = () => {
-  const hash = window.location.hash;
-
-  if (hash.startsWith('#fobia-')) {
-    const targetFobia = hash.split('-')[1];
-    const allSlides = slider.querySelectorAll('.swiper-slide');
-
-    allSlides.forEach((slide, index) => {
-      if (slide.dataset.fobia === targetFobia) {
-        swiper.slideTo(index, 0);
-      }
-    });
+  const closer = e.target.closest('[data-popup-close]');
+  if (closer) {
+    e.preventDefault();
+    PopupManager.close();
   }
+});
+
+export const subscribe = async data => {
+  await console.log('ОТПРАВЛЯЕМ ЗАПРОС В YANDEX...');
+  await console.log(data);
+  PopupManager.open('ok');
 };
 
-slider.addEventListener('click', slideNext);
-document.addEventListener('DOMContentLoaded', changeHash);
-window.addEventListener('hashchange', changeHash);
+document.addEventListener('DOMContentLoaded', () => {
+  initSprites('/assets/img/svg/sprite.svg');
+  initPopups('/components/popups.html', ['ok', 'error']);
+  initConnect();
+});

@@ -6,8 +6,15 @@
 }
 
 @font-face {
-  font-family: 'Yandex Sans';
+  font-family: 'Yandex Sans Medium';
   src: url('../fonts/yandex-sans.woff2') format('woff2'), url('../fonts/yandex-sans.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Yandex Sans Regular';
+  src: url('../fonts/yandex-sans-regular.woff2') format('woff2'), url('../fonts/yandex-sans-regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
