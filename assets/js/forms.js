@@ -97,7 +97,8 @@ function addErrorHTML(error, input) {
 function handleSubmit(form) {
   if (!validateForm(form)) return;
   const data = Object.fromEntries(new FormData(form).entries());
-  subscribe(data);
+  const submitButton = form.querySelector('.submit') || null;
+  subscribe(data, submitButton);
 }
 
 const onRequiredInputFocus = e => {

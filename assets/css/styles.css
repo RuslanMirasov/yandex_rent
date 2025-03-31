@@ -358,6 +358,36 @@ a {
   font-size: clamp(26px, 1.875vw, 72px);
   line-height: 1;
 }
+.submit.loading {
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0);
+}
+.submit.loading span {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.submit.loading span:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  border-left: 2px solid var(--white);
+  border-top: 2px solid var(--white);
+  border-right: 2px solid rgba(0, 0, 0, 0);
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  -webkit-animation: rotate 0.3s linear infinite;
+          animation: rotate 0.3s linear infinite;
+}
+@media (max-width: 767px) {
+  .submit.loading span:before {
+    width: 20px;
+    height: 20px;
+  }
+}
 .submit:disabled {
   opacity: 0.3;
   pointer-events: none;
@@ -377,6 +407,23 @@ a {
   background: var(--orange);
 }
 
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @media (max-width: 1023px), (orientation: portrait) {
   .button {
     line-height: 1.1;
