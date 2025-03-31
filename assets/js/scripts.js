@@ -24,7 +24,7 @@ export const subscribe = async data => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  initSprites('/assets/img/svg/sprite.svg');
-  initPopups('/components/popups.html', ['ok', 'error']);
+  initSprites('./assets/img/svg/sprite.svg');
+  initPopups('./components/popups.html', ['ok', 'error']);
   initConnect();
 });
