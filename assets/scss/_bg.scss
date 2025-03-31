@@ -60,7 +60,7 @@
   height: 100%;
   opacity: 0;
   transition: opacity 0.6s;
-  background: url('../img/light.webp') no-repeat right top/cover;
+  background: url('../img/svg/light_static.svg') no-repeat right top/cover;
   pointer-events: none;
   &.light--animated {
     width: 0%;
@@ -71,7 +71,7 @@
 
 .day {
   .light {
-    opacity: 1;
+    opacity: 0.5;
     &.light--animated {
       opacity: 0;
       width: 0%;
