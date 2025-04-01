@@ -241,7 +241,7 @@ a {
   }
   .logo {
     position: absolute;
-    left: clamp(20px, 3.125vw, 121px);
+    left: 20px;
     top: calc(100% + 40px);
   }
   .body.form .header .logo {
@@ -886,7 +886,7 @@ a {
   justify-content: space-between;
   margin-bottom: auto;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px), (orientation: portrait) {
   .subscribe {
     flex-wrap: wrap;
     gap: 20px;
@@ -900,7 +900,7 @@ a {
   width: clamp(375px, 28.125vw, 1086px);
   gap: clamp(20px, 1.5625vw, 60px);
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px), (orientation: portrait) {
   .subscribe__sidebar {
     width: 100%;
   }
@@ -913,7 +913,7 @@ a {
   flex-direction: column;
   gap: clamp(24px, 1.5625vw, 60px);
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px), (orientation: portrait) {
   .subscribe__form {
     width: 100%;
     background: var(--white);
@@ -934,15 +934,15 @@ a {
   line-height: 1.4;
   margin-top: clamp(0px, 0.5208vw, 20px);
 }
-@media (max-width: 1279px) {
+@media (max-width: 1365px) {
   .subscribe__form form .rules {
-    margin-bottom: clamp(0px, 1.5625vw, 60px);
+    margin-bottom: 20px;
   }
 }
 .subscribe__form form .rules a {
   text-decoration: underline;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px), (orientation: portrait) {
   .subscribe__form form {
     max-width: 100%;
     gap: 26px;
@@ -986,7 +986,7 @@ a {
     top: 30%;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px), (orientation: portrait) {
   .subscribe__image {
     position: relative;
     width: 100%;

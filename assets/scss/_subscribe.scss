@@ -4,7 +4,7 @@
   flex: 1;
   justify-content: space-between;
   margin-bottom: auto;
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px), (orientation: portrait) {
     flex-wrap: wrap;
     gap: 20px;
   }
@@ -16,7 +16,7 @@
   flex-direction: column;
   width: myclamp(375px, 540px, 1920px, 3860px);
   gap: myclamp(20px, 30px, 1920px, 3860px);
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px), (orientation: portrait) {
     width: 100%;
   }
 }
@@ -28,7 +28,7 @@
   flex-direction: column;
   gap: myclamp(24px, 30px, 1920px, 3860px);
 
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px), (orientation: portrait) {
     width: 100%;
     background: var(--white);
     padding: 20px;
@@ -46,14 +46,14 @@
       font-size: myclamp(10px, 14px, 1920px, 3860px);
       line-height: 1.4;
       margin-top: myclamp(0px, 10px, 1920px, 3860px);
-      @media (max-width: 1279px) {
-        margin-bottom: myclamp(0px, 30px, 1920px, 3860px);
+      @media (max-width: 1365px) {
+        margin-bottom: 20px;
       }
       a {
         text-decoration: underline;
       }
     }
-    @media (max-width: 1023px) {
+    @media (max-width: 1279px), (orientation: portrait) {
       max-width: 100%;
       gap: 26px;
     }
@@ -92,7 +92,7 @@
     bottom: auto;
     top: 30%;
   }
-  @media (max-width: 1023px) {
+  @media (max-width: 1279px), (orientation: portrait) {
     position: relative;
     width: 100%;
     max-width: 100%;
