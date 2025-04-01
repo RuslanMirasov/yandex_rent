@@ -168,37 +168,37 @@
     padding-top: 20px;
   }
 
-  .swiper-slide[data-hash='welcome'] .subtitle {
+  .swiper-slide.swiper-slide--welcome .subtitle {
     max-width: 280px;
     img {
       top: 110%;
     }
   }
-  .swiper-slide[data-hash='fobia-2'] .text {
+  .swiper-slide.swiper-slide--fobia-2 .text {
     max-width: 250px;
   }
-  .swiper-slide[data-hash='fobia-2-done'] .text {
+  .swiper-slide.swiper-slide--fobia-2-done .text {
     max-width: 285px;
   }
-  .swiper-slide[data-hash='fobia-3'] .text {
+  .swiper-slide.swiper-slide--fobia-3 .text {
     max-width: 280px;
   }
-  .swiper-slide[data-hash='fobia-4'] .text {
+  .swiper-slide.swiper-slide--fobia-4 .text {
     max-width: 267px;
   }
-  .swiper-slide[data-hash='fobia-5'] .text {
+  .swiper-slide.swiper-slide--fobia-5 .text {
     max-width: 267px;
   }
-  .swiper-slide[data-hash='fobia-5-done'] .slideImage {
+  .swiper-slide.swiper-slide--fobia-5-done .slideImage {
     margin-top: 24px;
   }
-  .swiper-slide[data-hash='fobia-5-done'] .text {
+  .swiper-slide.swiper-slide--fobia-5-done .text {
     max-width: 280px;
   }
-  .swiper-slide[data-hash='fobia-6'] .text {
+  .swiper-slide.swiper-slide--fobia-6 .text {
     max-width: 264px;
   }
-  .swiper-slide[data-hash='fobia-6-done'] .text {
+  .swiper-slide.swiper-slide--fobia-6-done .text {
     max-width: 280px;
   }
 }
