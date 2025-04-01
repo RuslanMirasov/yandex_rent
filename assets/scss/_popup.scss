@@ -54,6 +54,9 @@ body.locked {
     opacity: 1;
     transform: translate(0px, 0px);
   }
+  .popup-content {
+    position: relative;
+  }
 }
 
 .popup-close {
@@ -63,18 +66,20 @@ body.locked {
   align-items: center;
   align-content: center;
   position: absolute;
-  right: 30px;
-  top: 30px;
-  width: 28px;
-  height: 28px;
+  right: -50px;
+  top: -50px;
+  width: myclamp(44px, 48px, 1920px, 3860px);
+  height: myclamp(44px, 48px, 1920px, 3860px);
   transition: 0.3s;
+  border-radius: 48px;
+  background-color: var(--bg-form);
   transform: rotate(0deg);
   z-index: 2;
   &:before,
   &:after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 80%;
     height: 2px;
     background: var(--viola);
   }
@@ -87,7 +92,7 @@ body.locked {
   &:hover {
     transform: rotate(90deg);
   }
-  @media (max-width: 1279px) {
+  @media (max-width: 1365px) {
     right: 20px;
     top: 20px;
   }
@@ -108,7 +113,6 @@ body.locked {
   width: myclamp(20px, 1380px, 1920px, 3860px);
   padding: myclamp(20px, 60px, 1920px, 3860px);
   border-radius: myclamp(30px, 45px, 1920px, 3860px);
-  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
   background-color: var(--bg-form);
   color: var(--viola);
   @media (max-width: 1023px) {
@@ -118,12 +122,39 @@ body.locked {
   }
 }
 
-#ok {
-  width: 100%;
-  max-width: 500px;
+#ok,
+#error {
+  width: myclamp(375px, 740px, 1920px, 3860px);
+  height: auto;
   background: var(--bg-form);
   color: var(--viola);
-  padding: myclamp(20px, 40px, 1920px, 3860px);
+  padding: 70px 20px;
+  text-align: center;
   border-radius: myclamp(20px, 30px, 1920px, 3860px);
-  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.2);
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+.popup-title {
+  font-size: myclamp(32px, 52px, 1920px, 3860px);
+  line-height: 1.1;
+}
+
+.popup-subtitle {
+  font-size: myclamp(14px, 22px, 1920px, 3860px);
+  line-height: 1.4;
+}
+
+#error {
+  .popup-title,
+  .popup-subtitle {
+    color: var(--invalid);
+  }
+  .popup-close {
+    &:before,
+    &:after {
+      background: var(--invalid);
+    }
+  }
 }

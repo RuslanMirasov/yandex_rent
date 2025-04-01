@@ -1,10 +1,11 @@
 .text-content {
   display: flex;
   position: relative;
-  gap: myclamp(14px, 40px, 1080px, 3860px, vh);
+  gap: myclamp(14px, 20px, 1080px, 3860px);
   flex-direction: column;
   width: 100%;
   z-index: 1;
+
   &.first {
     margin-bottom: auto;
     padding: myclamp(20px, 40px, 1080px, 3860px) 0px;
@@ -45,6 +46,16 @@
   }
 }
 
+// .body.form {
+//   .swiper-slide {
+//     .title {
+//       &.title--h2 {
+//         margin-top: 0px;
+//       }
+//     }
+//   }
+// }
+
 .subtitle {
   display: block;
   font-size: myclamp(14px, 22px, 1920px, 3860px);
@@ -80,6 +91,11 @@
   font-size: myclamp(10px, 12px, 1920px, 3860px);
   padding-left: myclamp(0px, 250px, 1920px, 3860px);
   padding-top: myclamp(0px, 30px, 1920px, 3860px);
+
+  @media (max-width: 1365px) {
+    padding-bottom: 20px;
+  }
+  z-index: 2;
   line-height: 1.4;
   color: #909090;
   a {
@@ -101,10 +117,9 @@
   }
 }
 
-@media (max-width: 1023px), (orientation: portrait) {
+@media (max-width: 1279px), (orientation: portrait) {
   .title {
     &.title--h1 {
-      margin-top: 70px;
       margin-bottom: 10px;
     }
   }
@@ -127,16 +142,6 @@
   }
 }
 
-@media (max-width: 767px) {
-  .title,
-  .subtitle,
-  .text {
-    br {
-      display: none;
-    }
-  }
-}
-
 @media screen and (min-width: 360px) and (max-width: 767px) {
   .text-content {
     &.devided {
@@ -147,5 +152,53 @@
         top: 28px;
       }
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .title,
+  .subtitle,
+  .text,
+  .dop {
+    br {
+      display: none;
+    }
+  }
+  .dop {
+    padding-top: 20px;
+  }
+
+  .swiper-slide[data-hash='welcome'] .subtitle {
+    max-width: 280px;
+    img {
+      top: 110%;
+    }
+  }
+  .swiper-slide[data-hash='fobia-2'] .text {
+    max-width: 250px;
+  }
+  .swiper-slide[data-hash='fobia-2-done'] .text {
+    max-width: 285px;
+  }
+  .swiper-slide[data-hash='fobia-3'] .text {
+    max-width: 280px;
+  }
+  .swiper-slide[data-hash='fobia-4'] .text {
+    max-width: 267px;
+  }
+  .swiper-slide[data-hash='fobia-5'] .text {
+    max-width: 267px;
+  }
+  .swiper-slide[data-hash='fobia-5-done'] .slideImage {
+    margin-top: 24px;
+  }
+  .swiper-slide[data-hash='fobia-5-done'] .text {
+    max-width: 280px;
+  }
+  .swiper-slide[data-hash='fobia-6'] .text {
+    max-width: 264px;
+  }
+  .swiper-slide[data-hash='fobia-6-done'] .text {
+    max-width: 280px;
   }
 }

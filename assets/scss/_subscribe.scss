@@ -27,7 +27,6 @@
   max-width: 100%;
   flex-direction: column;
   gap: myclamp(24px, 30px, 1920px, 3860px);
-  padding-bottom: myclamp(0px, 24px, 1920px, 3860px);
 
   @media (max-width: 1023px) {
     width: 100%;
@@ -39,15 +38,20 @@
   form {
     display: flex;
     width: 100%;
-    max-width: myclamp(375px, 450px, 1920px, 3860px);
     flex-direction: column;
-    gap: myclamp(20px, 32px, 1920px, 3860px);
+    gap: myclamp(20px, 20px, 1920px, 3860px);
     .rules {
-      text-align: center;
+      text-align: left;
       font-family: var(--regular);
       font-size: myclamp(10px, 14px, 1920px, 3860px);
-      line-height: 1;
-      text-decoration: underline;
+      line-height: 1.2;
+      margin-top: myclamp(0px, 10px, 1920px, 3860px);
+      @media (max-width: 1279px) {
+        margin-bottom: myclamp(0px, 30px, 1920px, 3860px);
+      }
+      a {
+        text-decoration: underline;
+      }
     }
     @media (max-width: 1023px) {
       max-width: 100%;
@@ -71,14 +75,14 @@
 .subscribe__image {
   display: block;
   position: absolute;
-  left: myclamp(0px, 54px, 1920px, 3860px);
-  bottom: myclamp(0px, 0px, 1920px, 3860px);
-  width: myclamp(375px, 800px, 1920px, 3860px);
+  left: myclamp(0px, 60px, 1920px, 3860px);
+  bottom: 0px;
+  width: myclamp(375px, 692px, 1920px, 3860px);
   max-width: 53%;
   &.final {
-    left: myclamp(0px, 20px, 1920px, 3860px);
     bottom: auto;
-    top: myclamp(0px, 170px, 1920px, 3860px);
+    top: 56%;
+    transform: translate(0%, -50%);
   }
   @media (max-width: 1366px) {
     max-width: 48%;
@@ -96,6 +100,11 @@
     bottom: auto;
     top: auto;
     margin-top: 20px;
+    &.final {
+      bottom: auto;
+      top: auto;
+      transform: translate(0%, 0%);
+    }
   }
 }
 

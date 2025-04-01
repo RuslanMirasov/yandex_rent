@@ -5,17 +5,6 @@
       <h2 class="title title--h2">Это было <br />очень смело!</h2>
     </div>
     <div class="subscribe__form">
-      <div class="form-description">
-        <p>
-          Подпишитесь на нашу рассылку <br />
-          и получите промокод на дополнительные <br />
-          10% к первой арендной плате. <br />
-        </p>
-        <p>
-          Среди всех подписавшихся мы <br />
-          разыграем 10 Яндекс Станций Миди!
-        </p>
-      </div>
       <connect src="./components/subscribe-form.html" />
     </div>
   </div>
@@ -29,16 +18,22 @@
 <div class="popup-content" id="ok">
   <button class="popup-close" data-popup-close></button>
   <div class="text-content">
-    <h2 class="title title--h2">Вы подписаны!</h2>
-    <p class="text">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab laudantium repellat, qui dignissimos molestias quam nisi quis quia adipisci natus
-      at, consequatur reprehenderit omnis a quo odio! At.
+    <h2 class="popup-title">Спасибо <br />за подписку!</h2>
+    <p class="popup-subtitle">
+      Промокод на дополнительные <br />
+      10% к первой арендной плате <br />
+      уже на вашей почте
     </p>
-    <button class="button button--yellow" data-popup-close>Ок</button>
   </div>
 </div>
 
 <div class="popup-content" id="error">
   <button class="popup-close" data-popup-close></button>
-  <h2>Error</h2>
+  <div class="text-content">
+    <h2 class="popup-title">Произошла <br />шибка!</h2>
+    <p class="popup-subtitle">
+      При попытке оформить подписку <br />
+      что-то пошло не так...
+    </p>
+  </div>
 </div>

@@ -39,14 +39,21 @@ const changeTheme = theme => {
 
 const goToNextSlide = () => {
   if (!slideCollection.length) return;
-  if (window.scrollY > 0) scrollToBlock('body', 600);
+  let duration = 0;
 
-  const currentHash = window.location.hash.split('#')[1] || slideCollection[0].hash;
-  const currentIndex = slideCollection.find(slide => slide.hash === currentHash).index;
+  if (window.scrollY > 0) {
+    duration = 400;
+    scrollToBlock('body', duration);
+  }
 
-  if (currentIndex === slideCollection.length - 1) return;
-  const nextHash = slideCollection[currentIndex + 1].hash;
-  window.location.hash = nextHash;
+  setTimeout(() => {
+    const currentHash = window.location.hash.split('#')[1] || slideCollection[0].hash;
+    const currentIndex = slideCollection.find(slide => slide.hash === currentHash).index;
+
+    if (currentIndex === slideCollection.length - 1) return;
+    const nextHash = slideCollection[currentIndex + 1].hash;
+    window.location.hash = nextHash;
+  }, duration);
 };
 
 const turnOnTheLight = () => {
@@ -54,8 +61,8 @@ const turnOnTheLight = () => {
   const duration = isMobil ? 0 : 500;
   !isMobil && document.body.classList.add('on');
   setTimeout(() => {
-    goToNextSlide();
     !isMobil && document.body.classList.remove('on');
+    goToNextSlide();
   }, duration);
 };
 

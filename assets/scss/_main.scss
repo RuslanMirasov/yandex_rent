@@ -28,7 +28,7 @@
     myclamp(30px, 45px, 1920px, 3860px);
 }
 
-@media (max-width: 1023px), (orientation: portrait) {
+@media (max-width: 1279px), (orientation: portrait) {
   .main {
     padding-bottom: 72px;
   }

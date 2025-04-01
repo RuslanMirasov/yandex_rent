@@ -1,5 +1,5 @@
 import { subscribe } from './scripts.js';
-const showErrors = true;
+const showErrors = false;
 
 const validationRegEx = [
   {
@@ -32,7 +32,36 @@ const validationRegEx = [
   },
 ];
 
-function validateForm(form) {
+const validateInput = input => {
+  if (!input.required) return;
+
+  const validationError = error => {
+    addErrorHTML(error, input);
+    return false;
+  };
+
+  const { value, checked, type } = input;
+
+  if ((type === 'checkbox' || type === 'radio') && !checked) {
+    return validationError(validationRegEx.find(rule => rule.type === type).error);
+  }
+
+  if (!value || value === '') {
+    return validationError('Это обязательное поле!');
+  }
+
+  const validation = validationRegEx.find(v => v.type === type);
+  const regex = new RegExp(validation.regex);
+
+  if (!regex.test(value.trim())) {
+    return validationError(validation.error);
+  }
+
+  removeErrorHTML(input);
+  return true;
+};
+
+const validateForm = form => {
   if (!form) return;
   let errorsCount = 0;
 
@@ -40,35 +69,14 @@ function validateForm(form) {
   if (inputs.length === 0) return;
 
   inputs.forEach(input => {
-    const { name, value, checked, type } = input;
-    let errorText = '';
-
-    if ((type === 'checkbox' || type === 'radio') && !checked) {
-      errorsCount += 1;
-      errorText = validationRegEx.find(rule => rule.type === type).error;
-    }
-
-    if (type !== 'checkbox' && type !== 'radio') {
-      if (!value || value === '') {
-        errorsCount += 1;
-        errorText = 'Это обязательное поле!';
-      } else {
-        const validation = validationRegEx.find(v => v.type === type);
-        const regex = new RegExp(validation.regex);
-        if (!regex.test(value.trim())) {
-          errorsCount += 1;
-          errorText = validation.error;
-        }
-      }
-    }
-
-    addErrorHTML(errorText, input);
+    const isInputValid = validateInput(input);
+    errorsCount = isInputValid ? errorsCount : errorsCount + 1;
   });
 
   return errorsCount <= 0;
-}
+};
 
-function addErrorHTML(error, input) {
+const addErrorHTML = (error, input) => {
   if (!input) return;
 
   const label = input.closest('label');
@@ -92,14 +100,24 @@ function addErrorHTML(error, input) {
 
   if (existingError) existingError.remove();
   input.classList.remove('invalid');
-}
+};
 
-function handleSubmit(form) {
+const removeErrorHTML = input => {
+  if (!input) return;
+
+  const label = input.closest('label');
+  const error = label.querySelector('.inputError');
+  input.classList.remove('invalid');
+  if (error) error.style.height = '0px';
+};
+
+const handleSubmit = async form => {
   if (!validateForm(form)) return;
   const data = Object.fromEntries(new FormData(form).entries());
   const submitButton = form.querySelector('.submit') || null;
-  subscribe(data, submitButton);
-}
+  await subscribe(data, submitButton);
+  form.reset();
+};
 
 const onRequiredInputFocus = e => {
   const input = e.target;
@@ -132,6 +150,6 @@ document.addEventListener('focusin', e => {
 
 document.addEventListener('change', e => {
   if (e.target.matches('[required]')) {
-    onRequiredInputFocus(e);
+    validateInput(e.target);
   }
 });

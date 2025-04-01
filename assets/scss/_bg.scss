@@ -6,6 +6,10 @@
   right: 0px;
   bottom: 0px;
   height: 100%;
+  @media (max-width: 767px) {
+    height: calc(100% - 75px);
+    bottom: calc(100% - 75px);
+  }
   > div {
     transition: opacity 0.6s;
   }
@@ -25,14 +29,14 @@
   .background__night {
     background: url('../img/web.webp') no-repeat right top/cover;
     @media (max-width: 767px) {
-      background: url('../img/web_mobil.webp') no-repeat right top;
+      background: url('../img/svg/web.svg') no-repeat right top;
       background-size: 768px auto;
     }
   }
   .background__day {
     background: url('../img/sun.webp') no-repeat right top/cover;
     @media (max-width: 767px) {
-      background: url('../img/sun_mobil.webp') no-repeat right top;
+      background: url('../img/svg/sun.svg') no-repeat right top;
       background-size: 768px auto;
     }
   }

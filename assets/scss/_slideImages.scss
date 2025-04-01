@@ -29,7 +29,7 @@
   bottom: auto;
 }
 
-@media (max-width: 1023px), (orientation: portrait) {
+@media (max-width: 1279px), (orientation: portrait) {
   .slideImage {
     position: relative;
     right: auto;
@@ -48,6 +48,6 @@
     top: auto;
     bottom: auto;
     margin-bottom: auto;
-    margin-top: 20px;
+    margin-top: -20px;
   }
 }

@@ -4,6 +4,11 @@
   gap: myclamp(14px, 22px, 1920px, 3860px);
   font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
+  @media (max-width: 767px) {
+    p br {
+      display: none;
+    }
+  }
 }
 
 .input {
@@ -44,13 +49,12 @@
 .checkbox {
   display: none;
   + span {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     position: relative;
-    flex-direction: column;
     width: 100%;
     font-family: var(--regular);
-    align-items: flex-start;
-    justify-content: flex-start;
     padding-left: myclamp(52px, 60px, 1920px, 3860px);
     font-size: myclamp(10px, 14px, 1920px, 3860px);
     line-height: 1.2;
@@ -63,10 +67,9 @@
     }
     &:before {
       content: '';
-      display: inline-block;
+      display: block;
       position: absolute;
       left: 0px;
-      top: 3px;
       width: 30px;
       height: 30px;
       border: 2px solid #f1f1f1;
@@ -86,6 +89,7 @@
 
   &.invalid {
     + span {
+      color: var(--invalid);
       &:before {
         border: 2px solid var(--invalid);
       }
