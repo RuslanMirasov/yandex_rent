@@ -1,18 +1,20 @@
 export const initConnect = (root = document) => {
   const connectors = root.querySelectorAll('connect[src]');
 
-  connectors.forEach(el => {
+  const promises = Array.from(connectors).map(el => {
     const href = el.getAttribute('src');
 
-    fetch(href)
+    return fetch(href)
       .then(res => res.text())
       .then(html => {
-        el.outerHTML = html; // заменяем сам <connect> его содержимым
+        el.outerHTML = html;
       })
       .catch(err => {
         console.error(`Ошибка загрузки ${href}:`, err);
       });
   });
+
+  return Promise.all(promises);
 };
 
 export const initSprites = url => {
