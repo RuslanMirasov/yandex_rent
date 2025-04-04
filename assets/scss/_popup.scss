@@ -57,6 +57,9 @@ body.locked {
   .popup-content {
     position: relative;
   }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 }
 
 .popup-close {
@@ -93,8 +96,8 @@ body.locked {
     transform: rotate(90deg);
   }
   @media (max-width: 1365px) {
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
   }
 }
 
@@ -147,7 +150,8 @@ body.locked {
 }
 
 #error {
-  .popup-title {
-    color: var(--invalid);
+  background: #fff;
+  .popup-close {
+    background: #fff;
   }
 }

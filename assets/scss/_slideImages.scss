@@ -22,11 +22,17 @@
 }
 
 .slideImage--welcome {
-  width: 50%;
+  width: 27%;
   height: calc(100vh - myclamp(0px, 90px, 1920px, 3860px) - myclamp(0px, 90px, 1920px, 3860px));
-  right: myclamp(0px, -40px, 1920px, 3860px);
-  top: myclamp(0px, -120px, 1920px, 3860px);
-  bottom: auto;
+  bottom: myclamp(0px, 95px, 1920px, 3860px);
+  right: 6%;
+  @media (max-height: 55vw) {
+    width: 50%;
+    height: calc(100vh - myclamp(0px, 90px, 1920px, 3860px) - myclamp(0px, 90px, 1920px, 3860px));
+    right: myclamp(0px, -40px, 1920px, 3860px);
+    top: myclamp(0px, -120px, 1920px, 3860px);
+    bottom: auto;
+  }
 }
 
 @media (max-width: 1279px), (orientation: portrait) {

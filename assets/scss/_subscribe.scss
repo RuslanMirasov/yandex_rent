@@ -72,10 +72,14 @@
     left: myclamp(0px, -60px, 1920px, 3860px);
     right: myclamp(0px, -60px, 1920px, 3860px);
     top: 0px;
-    bottom: myclamp(-20px, -80px, 1920px, 3860px);
+    bottom: myclamp(-20px, -50px, 1920px, 3860px);
     z-index: 0;
     background: var(--viola);
-    border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
+    border-radius: myclamp(30px, 80px, 1920px, 3860px);
+    @media (max-height: 55vw) {
+      border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
+      bottom: myclamp(-20px, -80px, 1920px, 3860px);
+    }
   }
   p {
     position: relative;
@@ -112,6 +116,8 @@
   position: relative;
   justify-content: flex-end;
   width: 100%;
+  margin-bottom: 10px;
+  margin-top: -5px;
   picture {
     position: absolute;
     left: 0px;

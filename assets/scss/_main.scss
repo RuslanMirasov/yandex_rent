@@ -19,16 +19,20 @@
   margin: auto;
   width: 100%;
   max-width: myclamp(20px, 1380px, 1920px, 3860px);
-  min-height: 100%;
   transition: background-color 0.6s;
   border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 45px, 1920px, 3860px)
     myclamp(30px, 45px, 1920px, 3860px);
+  min-height: 40vw;
+  @media (max-height: 55vw) {
+    min-height: 100%;
+  }
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
   .content {
     justify-content: flex-start;
     max-width: 500px;
+    min-height: 100%;
   }
 }
 

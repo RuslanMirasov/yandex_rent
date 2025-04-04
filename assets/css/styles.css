@@ -200,15 +200,21 @@ a {
   margin: auto;
   width: 100%;
   max-width: clamp(20px, 71.875vw, 2774px);
-  min-height: 100%;
   transition: background-color 0.6s;
   border-radius: clamp(30px, 4.1667vw, 161px) clamp(30px, 4.1667vw, 161px) clamp(30px, 2.3438vw, 90px) clamp(30px, 2.3438vw, 90px);
+  min-height: 40vw;
+}
+@media (max-height: 55vw) {
+  .content {
+    min-height: 100%;
+  }
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
   .content {
     justify-content: flex-start;
     max-width: 500px;
+    min-height: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -856,11 +862,19 @@ a {
 }
 
 .slideImage--welcome {
-  width: 50%;
+  width: 27%;
   height: calc(100vh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
-  right: calc(-1 * clamp(0px, 2.0833vw, 80px));
-  top: calc(-1 * clamp(0px, 6.25vw, 241px));
-  bottom: auto;
+  bottom: clamp(0px, 4.9479vw, 191px);
+  right: 6%;
+}
+@media (max-height: 55vw) {
+  .slideImage--welcome {
+    width: 50%;
+    height: calc(100vh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
+    right: calc(-1 * clamp(0px, 2.0833vw, 80px));
+    top: calc(-1 * clamp(0px, 6.25vw, 241px));
+    bottom: auto;
+  }
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -959,10 +973,16 @@ a {
   left: calc(-1 * clamp(0px, 3.125vw, 121px));
   right: calc(-1 * clamp(0px, 3.125vw, 121px));
   top: 0px;
-  bottom: calc(-1 * clamp(-20px, 4.1667vw, 161px));
+  bottom: calc(-1 * clamp(-20px, 2.6042vw, 101px));
   z-index: 0;
   background: var(--viola);
-  border-radius: clamp(30px, 4.1667vw, 161px) clamp(30px, 4.1667vw, 161px) 0px 0px;
+  border-radius: clamp(30px, 4.1667vw, 161px);
+}
+@media (max-height: 55vw) {
+  .more-about-us:before {
+    border-radius: clamp(30px, 4.1667vw, 161px) clamp(30px, 4.1667vw, 161px) 0px 0px;
+    bottom: calc(-1 * clamp(-20px, 4.1667vw, 161px));
+  }
 }
 .more-about-us p {
   position: relative;
@@ -998,6 +1018,8 @@ a {
   position: relative;
   justify-content: flex-end;
   width: 100%;
+  margin-bottom: 10px;
+  margin-top: -5px;
 }
 .prize picture {
   position: absolute;
@@ -1432,6 +1454,11 @@ body.locked {
 .popup .popup-content {
   position: relative;
 }
+@media (max-width: 500px) {
+  .popup {
+    width: 100%;
+  }
+}
 
 .popup-close {
   display: flex;
@@ -1468,8 +1495,8 @@ body.locked {
 }
 @media (max-width: 1365px) {
   .popup-close {
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 10px;
   }
 }
 
@@ -1525,6 +1552,9 @@ body.locked {
   line-height: 1.4;
 }
 
-#error .popup-title {
-  color: var(--invalid);
+#error {
+  background: #fff;
+}
+#error .popup-close {
+  background: #fff;
 }
