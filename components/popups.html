@@ -1,18 +1,20 @@
 <div class="popup-content" id="subscribe">
   <button class="popup-close" data-popup-close></button>
-  <div class="subscribe">
-    <div class="subscribe__sidebar">
+
+  <div class="subscribe-grid">
+    <div class="subscribe-grid__left">
       <h2 class="title title--h2">Это было <br />очень смело!</h2>
+      <div class="prize-desctop">
+        <connect src="./components/prize.html" />
+      </div>
     </div>
-    <div class="subscribe__form">
+    <div class="subscribe-grid__right">
       <connect src="./components/subscribe-form.html" />
     </div>
   </div>
-  <picture class="subscribe__image">
-    <source srcset="./assets/img/slides/fobia3-done_mobil.webp" media="(max-width: 1023px)" />
-    <source srcset="./assets/img/slides/fobia3-done.webp" media="(min-width: 1024px)" />
-    <img src="./assets/img/slides/fobia3-done.webp" alt="Яндекс Аренда" />
-  </picture>
+  <div class="prize-mobil">
+    <connect src="./components/prize.html" />
+  </div>
 </div>
 
 <div class="popup-content" id="ok">

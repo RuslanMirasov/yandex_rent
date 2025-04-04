@@ -1,137 +1,301 @@
-.subscribe {
-  display: flex;
-  width: 100%;
-  flex: 1;
-  justify-content: space-between;
-  margin-bottom: auto;
-  @media (max-width: 1279px), (orientation: portrait) {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-}
-
-.subscribe__sidebar {
+.subscribe-grid {
   display: flex;
   position: relative;
-  flex-direction: column;
-  width: myclamp(375px, 540px, 1920px, 3860px);
-  gap: myclamp(20px, 30px, 1920px, 3860px);
-  @media (max-width: 1279px), (orientation: portrait) {
-    width: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: myclamp(20px, 40px, 1920px, 3860px);
+  .subscribe-grid__left {
+    flex: 1;
+    order: 0;
+  }
+  .subscribe-grid__right {
+    width: 42%;
+    order: 0;
   }
 }
 
-.subscribe__form {
-  display: inline-flex;
-  width: myclamp(375px, 520px, 1920px, 3860px);
-  max-width: 100%;
+.form-description {
+  display: flex;
   flex-direction: column;
-  gap: myclamp(24px, 30px, 1920px, 3860px);
+  gap: myclamp(14px, 22px, 1920px, 3860px);
+  font-size: myclamp(14px, 22px, 1920px, 3860px);
+  line-height: 1.4;
+  margin-bottom: myclamp(5px, 10px, 1920px, 3860px);
+  @media (max-width: 767px) {
+    p br {
+      display: none;
+    }
+  }
+}
 
-  @media (max-width: 1279px), (orientation: portrait) {
-    width: 100%;
+.subscribe-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: myclamp(20px, 20px, 1920px, 3860px);
+}
+
+.rules {
+  display: inline-block;
+  text-align: left;
+  font-family: var(--regular);
+  font-size: myclamp(10px, 14px, 1920px, 3860px);
+  line-height: 1.4;
+  margin-top: myclamp(20px, 20px, 1920px, 3860px);
+  @media (max-width: 1365px) {
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: underline;
+  }
+}
+
+.more-about-us {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  gap: myclamp(20px, 24px, 1920px, 3860px);
+  justify-content: space-between;
+  color: var(--white);
+  padding: myclamp(20px, 22px, 1920px, 3860px) 0px;
+  padding-bottom: 0px;
+  margin-top: myclamp(0px, 20px, 1920px, 3860px);
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: myclamp(0px, -60px, 1920px, 3860px);
+    right: myclamp(0px, -60px, 1920px, 3860px);
+    top: 0px;
+    bottom: myclamp(-20px, -80px, 1920px, 3860px);
+    z-index: 0;
+    background: var(--viola);
+    border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
+  }
+  p {
+    position: relative;
+    z-index: 1;
+    font-size: myclamp(14px, 22px, 1920px, 3860px);
+    line-height: 1.4;
+    span {
+      color: var(--bg-form);
+    }
+    @media (max-width: 1279px) {
+      br {
+        display: none;
+      }
+    }
+  }
+  .button {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--white);
+  }
+}
+
+.prize-desctop {
+  display: block;
+}
+
+.prize-mobil {
+  display: none;
+  margin-bottom: auto;
+}
+
+.prize {
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  width: 100%;
+  picture {
+    position: absolute;
+    left: 0px;
+    top: myclamp(0px, 50px, 1920px, 3860px);
+    width: myclamp(20px, 350px, 1920px, 3860px);
+    height: myclamp(20px, 352px, 1920px, 3860px);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ul {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    gap: myclamp(0px, 60px, 1920px, 3860px);
+    li {
+      display: inline-block;
+      position: relative;
+      width: auto;
+      text-align: center;
+      background: var(--orange);
+      color: var(--white);
+      padding-left: myclamp(20px, 32px, 1920px, 3860px);
+      padding-right: myclamp(20px, 32px, 1920px, 3860px);
+      border-radius: myclamp(20px, 36px, 1920px, 3860px);
+      font-family: var(--bold);
+      line-height: 1;
+      font-size: myclamp(14px, 26px, 1920px, 3860px);
+      &:before {
+        content: '';
+        position: absolute;
+        left: -8%;
+        bottom: -14%;
+        width: myclamp(20px, 40px, 1920px, 3860px);
+        height: myclamp(36px, 66px, 1920px, 3860px);
+        background: url('../img/svg/romb.svg') no-repeat center center/cover;
+        transform: rotate(-11.7deg);
+      }
+
+      transform: rotate(11.7deg);
+      padding-top: myclamp(8px, 12px, 1920px, 3860px);
+      padding-bottom: myclamp(8px, 12px, 1920px, 3860px);
+
+      &:first-child {
+        transform: rotate(-12.7deg);
+        padding-top: myclamp(10px, 16px, 1920px, 3860px);
+        padding-bottom: myclamp(12px, 20px, 1920px, 3860px);
+        &:before {
+          left: -4%;
+          width: myclamp(18px, 32px, 1920px, 3860px);
+          height: myclamp(30px, 52px, 1920px, 3860px);
+          transform: rotate(12.7deg);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1279px), (orientation: portrait) {
+  .prize-mobil {
+    display: block;
+  }
+
+  .prize-desctop {
+    display: none;
+  }
+
+  .subscribe-grid {
+    flex-wrap: wrap;
+    .subscribe-grid__right {
+      width: 100%;
+      order: 1;
+    }
+  }
+
+  .subscribe-form {
+    max-width: 100%;
+    gap: 26px;
     background: var(--white);
     padding: 20px;
     border-radius: 30px;
+    .input {
+      background: #e7e7e7;
+      border: 2px solid #e7e7e7;
+    }
+    .radio:checked + span:before,
+    .checkbox:checked + span:before {
+      background: #e7e7e7 url(../img/svg/checkbox.svg) no-repeat center center;
+      border: 2px solid #e7e7e7;
+    }
   }
 
-  form {
-    display: flex;
-    width: 100%;
+  .more-about-us {
+    flex-wrap: nowrap;
     flex-direction: column;
-    gap: myclamp(20px, 20px, 1920px, 3860px);
-    .rules {
-      text-align: left;
-      font-family: var(--regular);
-      font-size: myclamp(10px, 14px, 1920px, 3860px);
-      line-height: 1.4;
-      margin-top: myclamp(0px, 10px, 1920px, 3860px);
-      @media (max-width: 1365px) {
-        margin-bottom: 20px;
+    gap: 22px;
+    justify-content: flex-start;
+    padding: 24px 20px;
+    border-radius: 30px;
+    background: var(--viola);
+    margin-bottom: 30px;
+    margin-top: -80px;
+    .button {
+      height: 50px;
+      border: 2px solid var(--white);
+      font-size: 26px;
+      margin-top: 10px !important;
+    }
+    &:before {
+      content: none;
+    }
+    p {
+      br {
+        display: none;
       }
-      a {
-        text-decoration: underline;
+      span {
+        color: var(--bg-form);
       }
     }
-    @media (max-width: 1279px), (orientation: portrait) {
-      max-width: 100%;
-      gap: 26px;
-    }
   }
 
-  label {
-    display: block;
-    position: relative;
-    user-select: none;
-  }
-}
-
-.popup {
-  .subscribe__form form .rules {
-    text-align: left;
-  }
-}
-
-.subscribe__image {
-  display: block;
-  position: absolute;
-  left: myclamp(0px, 60px, 1920px, 3860px);
-  bottom: 0px;
-  width: myclamp(375px, 692px, 1920px, 3860px);
-  max-width: 53%;
-  &.final {
-    bottom: auto;
-    top: 56%;
-    transform: translate(0%, -50%);
-  }
-  @media (max-width: 1366px) {
-    max-width: 48%;
-  }
-  @media (max-width: 1279px) {
-    max-width: 42%;
-    bottom: auto;
-    top: 30%;
-  }
-  @media (max-width: 1279px), (orientation: portrait) {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    left: 0px;
-    bottom: auto;
-    top: auto;
+  .prize {
+    flex-direction: column;
+    justify-content: center;
     margin-top: 20px;
-    &.final {
-      bottom: auto;
-      top: auto;
-      transform: translate(0%, 0%);
+    picture {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    ul {
+      width: 100%;
+      flex-direction: row;
+      li {
+        font-size: 14px;
+        margin-top: 20px;
+        &:first-child {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+
+  .popup {
+    .form-description {
+      br {
+        display: none;
+      }
+    }
+    .prize {
+      ul {
+        position: relative;
+        max-width: 320px;
+        margin-right: auto;
+        li {
+          position: absolute;
+          font-size: 13px;
+          right: -10px;
+          &:first-child {
+            position: relative;
+            margin-right: auto;
+            left: -10px;
+          }
+        }
+      }
     }
   }
 }
 
-.popup {
-  .subscribe__image {
-    left: myclamp(0px, 20px, 1920px, 3860px);
-    bottom: myclamp(0px, 40px, 1920px, 3860px);
-  }
-}
-
-.prizes {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative;
-}
-
-.slideImage--fobia3-done {
-  width: myclamp(375px, 720px, 1920px, 3860px);
-  max-width: 55%;
-  height: auto;
-  left: myclamp(0px, 60px, 1920px, 3860px);
-  bottom: myclamp(0px, 20px, 1920px, 3860px);
-  img {
-    position: relative;
-    height: auto;
-    max-height: 2000px;
+@media (max-width: 374px) {
+  .prize {
+    ul {
+      li {
+        font-size: 12px;
+      }
+    }
   }
 }

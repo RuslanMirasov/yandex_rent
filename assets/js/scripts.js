@@ -7,7 +7,7 @@ export const subscribe = async (data, btn) => {
 
   try {
     btn.classList.add('loading');
-    const response = await fetch('https://arenda.yandex.ru/external-forms/arendophobia/', {
+    const response = await fetch('https://arenda.yandex.ru/external-forms/arendophobia2/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

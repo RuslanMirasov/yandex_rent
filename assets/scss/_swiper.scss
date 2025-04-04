@@ -43,57 +43,6 @@
   }
 }
 
-.more-about-us {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  gap: myclamp(20px, 24px, 1920px, 3860px);
-  justify-content: space-between;
-  color: var(--white);
-  //background-color: var(--viola);
-
-  padding: myclamp(20px, 22px, 1920px, 3860px) 0px;
-  transform: translate(0px, myclamp(50px, 80px, 1920px, 3860px));
-  margin-top: myclamp(50px, -32px, 1920px, 3860px);
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: myclamp(0px, -60px, 1920px, 3860px);
-    right: myclamp(0px, -60px, 1920px, 3860px);
-    z-index: 0;
-    background: var(--viola);
-    border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
-  }
-  p {
-    position: relative;
-    z-index: 1;
-    font-size: myclamp(14px, 22px, 1920px, 3860px);
-    line-height: 1.4;
-    span {
-      color: var(--bg-form);
-    }
-    &.more-about-us-left {
-      width: myclamp(0px, 540px, 1920px, 3860px);
-    }
-    &.more-about-us-right {
-      width: myclamp(0px, 520px, 1920px, 3860px);
-    }
-    @media (max-width: 1279px) {
-      br {
-        display: none;
-      }
-    }
-  }
-  .button {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid var(--white);
-  }
-}
-
 @media (max-width: 1279px), (orientation: portrait) {
   .swiper-slide {
     flex: 1;
@@ -110,45 +59,10 @@
         top: auto;
       }
     }
-  }
-
-  .more-about-us {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    gap: 22px;
-    justify-content: flex-start;
-
-    padding: 24px 0px 70px 0px;
-    transform: translate(0px, 70px);
-    margin-top: -150px;
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0px;
-      bottom: 0px;
-      left: -20px;
-      right: -20px;
-      z-index: 0;
-      background: var(--viola);
-      border-radius: 30px 30px 0px 0px;
-    }
-    p {
-      br {
-        display: none;
+    &.swiper-slide--subscribe-now {
+      .title.title--h2 {
+        max-width: 320px;
       }
-      span {
-        color: var(--bg-form);
-      }
-      &.more-about-us-left {
-        width: 100%;
-      }
-      &.more-about-us-right {
-        width: 100%;
-      }
-    }
-    .button {
-      margin-top: 10px;
     }
   }
 }

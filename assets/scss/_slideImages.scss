@@ -23,7 +23,7 @@
 
 .slideImage--welcome {
   width: 50%;
-  height: calc(100vh - myclamp(0px, 90px, 1920px, 3860px) - myclamp(0px, 80px, 1920px, 3860px));
+  height: calc(100vh - myclamp(0px, 90px, 1920px, 3860px) - myclamp(0px, 90px, 1920px, 3860px));
   right: myclamp(0px, -40px, 1920px, 3860px);
   top: myclamp(0px, -120px, 1920px, 3860px);
   bottom: auto;
@@ -47,7 +47,7 @@
     right: auto;
     top: auto;
     bottom: auto;
-    margin-bottom: auto;
+    //margin-bottom: auto;
     margin-top: -20px;
   }
 }

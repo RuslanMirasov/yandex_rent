@@ -72,8 +72,8 @@
             <source srcset="./assets/img/slides/welcome_mobil.webp" media="(max-width: 1279px), (orientation: portrait)" />
             <img src="./assets/img/slides/welcome.webp" alt="Яндекс Аренда" loading="eager" />
           </picture>
-          <h1 class="title title--h1">Попрощайтесь <br />с арендофобией!</h1>
           <div class="text-content first">
+            <h1 class="title title--h1">Попрощайтесь <br />с арендофобией!</h1>
             <p class="subtitle">
               Давно хотите сдать квартиру в аренду, но переживаете <br />
               за ремонт, мебель или боитесь не справиться с проверкой <br />
@@ -267,24 +267,29 @@
 
         <!--FOBIA-3-DONE (SUBSCRIBE)-->
         <section class="swiper-slide swiper-slide--subscribe-now" data-theme="form" data-hash="fobia-party-is-done">
-          <div class="subscribe">
-            <div class="subscribe__sidebar">
-              <b class="title title--h5">Спокойно!</b>
-              <h2 class="title title--h2">
-                Это вечеринка <br />
-                Яндекс Аренды <br />
-                с розыгрышем <br />
-                призов
-              </h2>
+          <div class="subscribe-grid">
+            <div class="subscribe-grid__left">
+              <div class="text-content">
+                <b class="title title--h5">Спокойно!</b>
+                <h2 class="title title--h2">
+                  Это вечеринка <br />
+                  Яндекс Аренды <br />
+                  с розыгрышем <br />
+                  призов
+                </h2>
+              </div>
+              <div class="prize-desctop">
+                <connect src="./components/prize.html" />
+              </div>
             </div>
-            <div class="subscribe__form">
+            <div class="subscribe-grid__right">
               <connect src="./components/subscribe-form.html" />
             </div>
           </div>
-          <picture class="subscribe__image">
-            <source srcset="./assets/img/slides/fobia3-done_mobil.webp" media="(max-width: 1279px), (orientation: portrait)" />
-            <img src="./assets/img/slides/fobia3-done.webp" alt="Яндекс Аренда" />
-          </picture>
+
+          <div class="prize-mobil">
+            <connect src="./components/prize.html" />
+          </div>
 
           <button class="button button--yellow" data-next>Далее</button>
         </section>
@@ -461,7 +466,10 @@
             <h2 class="title title--h2">Звонок от соседей <br />в полночь</h2>
             <p class="text">
               «Вы нас топите!», — доносится из телефонной <br />
-              трубки в полночь. И в голове сразу куча вопросов: <br />
+              трубки в полночь.
+            </p>
+            <p class="text">
+              И в голове сразу куча вопросов: <br />
               что делать и куда бежать?
             </p>
           </div>
@@ -508,34 +516,43 @@
 
         <!--FINAL FORM-->
         <section class="swiper-slide swiper-slide--final" data-theme="form" data-hash="subscribe">
-          <div class="subscribe">
-            <div class="subscribe__sidebar">
+          <div class="subscribe-grid">
+            <div class="subscribe-grid__left">
               <h2 class="title title--h2">
                 Успех! Вместе <br />
                 мы проработали <br />
                 арендофобию!
               </h2>
+              <div class="prize-desctop">
+                <connect src="./components/prize.html" />
+              </div>
             </div>
-            <div class="subscribe__form">
+            <div class="subscribe-grid__right">
               <connect src="./components/subscribe-form.html" />
             </div>
           </div>
-          <picture class="subscribe__image final">
-            <source srcset="./assets/img/slides/fobia3-done_mobil.webp" media="(max-width: 1279px), (orientation: portrait)" />
-            <img src="./assets/img/slides/fobia3-done.webp" alt="Яндекс Аренда" />
-          </picture>
+
+          <div class="prize-mobil">
+            <connect src="./components/prize.html" />
+          </div>
 
           <div class="more-about-us">
-            <p class="more-about-us-left">
-              <span>Яндекс Аренда</span> помогает посмотреть на процесс <br />
-              аренды по-новому и избавиться от старых страхов <br />
-              с помощью технологий и удобных процессов.
-            </p>
-            <p class="more-about-us-right">
-              Мы сами проведём показы квартиры, обеспечим <br />
-              арендную плату вовремя и будем рядом <br />
-              на протяжении всего срока сдачи квартиры.
-            </p>
+            <div class="subscribe-grid">
+              <div class="subscribe-grid__left">
+                <p class="more-about-us-left">
+                  <span>Яндекс Аренда</span> помогает посмотреть на процесс <br />
+                  аренды по-новому и избавиться от старых страхов <br />
+                  с помощью технологий и удобных процессов.
+                </p>
+              </div>
+              <div class="subscribe-grid__right">
+                <p class="more-about-us-right">
+                  Мы сами проведём показы квартиры, обеспечим <br />
+                  арендную плату вовремя и будем рядом <br />
+                  на протяжении всего срока сдачи квартиры.
+                </p>
+              </div>
+            </div>
             <a href="https://arenda.yandex.ru/?utm_source=special&utm_medium=finalpage&utm_campaign=stoparendophobia" class="button">
               Узнать больше<span class="del_in_tablet">&nbsp;о Яндекс Аренде</span>
             </a>
@@ -544,7 +561,7 @@
       </div>
     </main>
 
-    <!--POPUP-->
+    <!--POPUPS-->
     <div class="backdrop" data-backdrop>
       <div class="popup" data-popup></div>
     </div>

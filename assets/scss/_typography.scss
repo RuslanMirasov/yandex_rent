@@ -7,8 +7,7 @@
   z-index: 1;
 
   &.first {
-    margin-bottom: auto;
-    padding: myclamp(20px, 40px, 1080px, 3860px) 0px;
+    gap: myclamp(14px, 30px, 1080px, 3860px);
   }
 }
 
@@ -41,9 +40,13 @@
     font-size: myclamp(16px, 34px, 1920px, 3860px);
     line-height: 1.1;
     span {
-      opacity: 0.2;
+      color: #9353f1;
     }
   }
+}
+
+.day .title.title--h5 span {
+  color: #c3b1e8;
 }
 
 // .body.form {
@@ -91,10 +94,6 @@
   font-size: myclamp(10px, 12px, 1920px, 3860px);
   padding-left: myclamp(0px, 250px, 1920px, 3860px);
   padding-top: myclamp(0px, 30px, 1920px, 3860px);
-
-  @media (max-width: 1365px) {
-    padding-bottom: 20px;
-  }
   z-index: 2;
   line-height: 1.4;
   color: #909090;
@@ -148,8 +147,8 @@
       position: static;
       .title.title--h5 {
         position: absolute;
-        right: 20px;
-        top: 28px;
+        left: 20px;
+        top: 55px;
       }
     }
   }
@@ -200,5 +199,8 @@
   }
   .swiper-slide.swiper-slide--fobia-6-done .text {
     max-width: 280px;
+  }
+  .swiper-slide.swiper-slide--fobia-7 .text {
+    max-width: 290px;
   }
 }

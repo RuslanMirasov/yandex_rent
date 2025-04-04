@@ -147,14 +147,7 @@ body.locked {
 }
 
 #error {
-  .popup-title,
-  .popup-subtitle {
+  .popup-title {
     color: var(--invalid);
-  }
-  .popup-close {
-    &:before,
-    &:after {
-      background: var(--invalid);
-    }
   }
 }
