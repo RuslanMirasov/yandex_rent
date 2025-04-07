@@ -13,6 +13,7 @@
   --orange: #f97755;
   --orange-hover: #da5f40;
   --invalid: red;
+  --backdrop-bg: rgba(35, 0, 87, 0.3);
 
   --logo-color: #ffffff;
   --logo-bg: #230057;
@@ -37,6 +38,7 @@
 
 .day {
   --bg: #eae0ff;
+  --backdrop-bg: rgba(234, 224, 255, 0.3);
   --color: #7d24ff;
   --slider-bg: #f6f0ff;
 
@@ -50,6 +52,7 @@
 
 .form {
   --bg: #eae0ff;
+  --backdrop-bg: rgba(234, 224, 255, 0.3);
   --color: #7d24ff;
   --slider-bg: #f8d849;
 

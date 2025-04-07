@@ -13,6 +13,7 @@
   --orange: #f97755;
   --orange-hover: #da5f40;
   --invalid: red;
+  --backdrop-bg: rgba(35, 0, 87, 0.3);
   --logo-color: #ffffff;
   --logo-bg: #230057;
   --logo-border: #ffffff;
@@ -35,6 +36,7 @@
 
 .day {
   --bg: #eae0ff;
+  --backdrop-bg: rgba(234, 224, 255, 0.3);
   --color: #7d24ff;
   --slider-bg: #f6f0ff;
   --logo-color: #000000;
@@ -47,6 +49,7 @@
 
 .form {
   --bg: #eae0ff;
+  --backdrop-bg: rgba(234, 224, 255, 0.3);
   --color: #7d24ff;
   --slider-bg: #f8d849;
   --logo-color: #000000;
@@ -175,7 +178,18 @@ a {
   height: auto;
 }
 
+.keep {
+  display: block !important;
+}
+
+.show_in_mobil {
+  display: none;
+}
+
 @media (max-width: 767px) {
+  .show_in_mobil {
+    display: block !important;
+  }
   .del_in_mobil {
     display: none;
   }
@@ -219,7 +233,7 @@ a {
 @media (max-width: 1279px), (orientation: portrait) {
   .content {
     justify-content: flex-start;
-    max-width: 500px;
+    max-width: 600px;
     min-height: 100%;
   }
 }
@@ -241,16 +255,16 @@ a {
 
 .logo {
   display: block;
-  transition: 0.6s;
+  transition: 0.8s;
   width: clamp(150px, 15.5208vw, 599px);
 }
-.logo svg {
-  transition: fill 0.6s, stroke 0.6s, opacity 0.6s, color 0.6s;
+.logo .icon {
+  transition: 0.8s;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
   .header {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
   }
   .logo {
@@ -323,8 +337,9 @@ a {
   justify-content: center;
   width: clamp(62px, 7.2917vw, 281px);
   margin-top: clamp(14px, 1.8519vw, 71px);
+  margin-bottom: clamp(14px, 1.6667vw, 64px);
   z-index: 5;
-  transition: opacity 0.6s;
+  transition: opacity 0.8s;
   opacity: 0;
   outline: none;
 }
@@ -337,7 +352,7 @@ a {
 .get-present-button .icon {
   position: absolute;
   top: 0px;
-  transition: 0.6s;
+  transition: 0.8s;
 }
 .get-present-button img {
   width: 100%;
@@ -345,7 +360,7 @@ a {
   left: 0px;
   top: 0px;
   transform: translate(0px, 0px) rotate(0deg);
-  transition: transform 0.4s, opacity 0.6s;
+  transition: transform 0.8s, opacity 0.4s;
 }
 .get-present-button:hover img.presentBox, .get-present-button:focus img.presentBox {
   transform: translate(5px, 15px) rotate(10deg);
@@ -356,7 +371,7 @@ a {
 
 .swiper-slide-active .get-present-button {
   opacity: 1;
-  transition: background-color 0.3s, opacity 0.6s ease-in-out 0.6s;
+  transition: background-color 0.3s, opacity 0.8s ease 0.4s;
 }
 
 .submit {
@@ -479,7 +494,7 @@ a {
   }
 }
 .background > div {
-  transition: opacity 0.6s;
+  transition: opacity 0.8s;
 }
 .background .background__night,
 .background .background__day {
@@ -518,12 +533,12 @@ a {
 
 .night .background__night {
   opacity: 1;
-  transition: opacity 0.6s ease-in-out 0.3s;
+  transition: opacity 0.8s ease-in-out 0.3s;
 }
 
 .day .background__day {
   opacity: 1;
-  transition: opacity 0.6s ease-in-out 0.3s;
+  transition: opacity 0.8s ease-in-out 0.3s;
 }
 
 .foregrounds {
@@ -549,13 +564,13 @@ a {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: opacity 0.8s;
   background: url("../img/svg/light_static.svg") no-repeat right top/cover;
   pointer-events: none;
 }
 .light.light--animated {
   width: 0%;
-  transition: opacity 0.5s ease-in-out 0s, width 0s linear 0.5s;
+  transition: opacity 0.8s ease-in-out 0s, width 0s linear 0.8s;
   background: url("../img/svg/light.svg") no-repeat right top/cover;
 }
 
@@ -571,7 +586,7 @@ a {
   opacity: 0.2;
   width: 100%;
   height: 100%;
-  transition: opacity 0.5s, width 0.5s;
+  transition: opacity 0.3s, width 0.3s;
 }
 
 .text-content {
@@ -588,7 +603,8 @@ a {
 
 .title {
   display: block;
-  transition: color 0.6s opacity 0.6s;
+  opacity: 0;
+  transition: color 0.8s, opacity 0.8s;
 }
 .title.title--h1 {
   font-size: clamp(32px, 4.1667vw, 161px);
@@ -615,6 +631,21 @@ a {
   color: #9353f1;
 }
 
+.day .swiper-slide-active .title,
+.night .swiper-slide-active .title,
+.form .swiper-slide-active .title {
+  opacity: 1;
+}
+
+.day .swiper-slide-active .title,
+.night .swiper-slide-active .title {
+  transition: color 0.8s, opacity 0.8s ease 0.4s;
+}
+
+.on .swiper-slide-active .title {
+  opacity: 0;
+}
+
 .day .title.title--h5 span {
   color: #c3b1e8;
 }
@@ -623,8 +654,8 @@ a {
   display: block;
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
-  opacity: 1;
-  transition: opacity 0.6s ease-in-out 0s;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
 }
 .subtitle span {
   display: inline-block;
@@ -643,14 +674,14 @@ a {
   position: relative;
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
-  opacity: 1;
-  transition: opacity 0.6s ease-in-out 0s;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
 }
 
 .dop {
   position: absolute;
-  right: clamp(10px, 3.125vw, 121px);
-  bottom: clamp(10px, 5.7292vw, 221px);
+  right: clamp(60px, 3.125vw, 121px);
+  bottom: clamp(92px, 5.7292vw, 221px);
   font-size: clamp(10px, 0.625vw, 24px);
   padding-left: clamp(0px, 13.0208vw, 503px);
   padding-top: clamp(0px, 1.5625vw, 60px);
@@ -663,13 +694,10 @@ a {
   text-decoration: underline;
 }
 
-.swiper-slide .text,
-.swiper-slide .subtitle {
-  opacity: 0;
-}
-.swiper-slide.swiper-slide-active .text,
-.swiper-slide.swiper-slide-active .subtitle {
+.swiper-slide-active .text,
+.swiper-slide-active .subtitle {
   opacity: 1;
+  transition: opacity 0.8s ease 0.4s, color 0.8s ease 0.4s;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -850,7 +878,7 @@ a {
   pointer-events: none;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.6s;
+  transition: opacity 0.8s;
   right: 0px;
   bottom: 0px;
   width: 100%;
@@ -1325,7 +1353,7 @@ a {
   padding-top: clamp(0px, 2.8125vw, 109px);
   padding-left: clamp(20px, 3.125vw, 121px);
   padding-right: clamp(20px, 3.125vw, 121px);
-  padding-bottom: clamp(30px, 6.25vw, 241px);
+  padding-bottom: clamp(72px, 4.6875vw, 181px);
   width: 100%;
   height: 100%;
   -webkit-user-select: none;
@@ -1338,7 +1366,7 @@ a {
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: opacity 0.6s, height 0s;
+  transition: opacity 0.8s, height 0s;
 }
 .swiper-slide.swiper-slide--final {
   padding-bottom: 0px;
@@ -1359,7 +1387,7 @@ a {
   overflow: visible;
   z-index: 2;
   opacity: 1;
-  transition: opacity 0.6s, height 0s linear 0.6s;
+  transition: opacity 0.8s, height 0s linear 0.8s;
 }
 .swiper-slide .title.title--h2 {
   margin-top: calc(-1 * clamp(0px, 0.5208vw, 20px));
@@ -1452,22 +1480,9 @@ body.locked {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  background: var(--backdrop-bg);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-}
-.backdrop:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--bg);
-  opacity: 0.5;
-  z-index: 0;
 }
 .backdrop.active {
   opacity: 1;
@@ -1489,6 +1504,9 @@ body.locked {
 }
 .popup .popup-content {
   position: relative;
+}
+.popup .title {
+  opacity: 1;
 }
 @media (max-width: 500px) {
   .popup {
@@ -1553,10 +1571,10 @@ body.locked {
   background-color: var(--bg-form);
   color: var(--viola);
 }
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   #subscribe {
     width: 100%;
-    max-width: 450px;
+    max-width: 375px;
     padding: 50px 20px 20px 20px;
   }
 }

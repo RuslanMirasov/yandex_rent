@@ -94,7 +94,18 @@ a {
   height: auto;
 }
 
+.keep {
+  display: block !important;
+}
+
+.show_in_mobil {
+  display: none;
+}
+
 @media (max-width: 767px) {
+  .show_in_mobil {
+    display: block !important;
+  }
   .del_in_mobil {
     display: none;
   }

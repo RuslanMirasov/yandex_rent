@@ -58,7 +58,7 @@ const goToNextSlide = () => {
 
 const turnOnTheLight = () => {
   const isMobil = window.outerWidth < 768;
-  const duration = isMobil ? 0 : 500;
+  const duration = isMobil ? 0 : 300;
   !isMobil && document.body.classList.add('on');
   setTimeout(() => {
     !isMobil && document.body.classList.remove('on');
