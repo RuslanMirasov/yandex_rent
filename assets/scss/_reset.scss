@@ -41,6 +41,11 @@ body {
   overflow-y: auto;
 }
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 img {
   display: block;
   max-width: 100%;

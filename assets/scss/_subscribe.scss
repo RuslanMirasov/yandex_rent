@@ -102,15 +102,6 @@
   }
 }
 
-.prize-desctop {
-  display: block;
-}
-
-.prize-mobil {
-  display: none;
-  margin-bottom: auto;
-}
-
 .prize {
   display: flex;
   position: relative;
@@ -181,14 +172,6 @@
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
-  .prize-mobil {
-    display: block;
-  }
-
-  .prize-desctop {
-    display: none;
-  }
-
   .subscribe-grid {
     flex-wrap: wrap;
     .subscribe-grid__right {

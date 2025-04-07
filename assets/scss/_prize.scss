@@ -1,0 +1,43 @@
+.prize-desctop {
+  display: block;
+}
+
+.prize-mobil {
+  display: none;
+  margin-bottom: auto;
+}
+
+@media (max-width: 1279px), (orientation: portrait) {
+  .prize-mobil {
+    display: block;
+  }
+
+  .prize-image.prize-image--subscribe,
+  .prize-image.prize-image--popup,
+  .prize-image.prize-image--final {
+    display: none;
+  }
+}
+
+.prize-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  &.prize-image--subscribe {
+    position: absolute;
+    bottom: 0px;
+    left: myclamp(40px, 40px, 1920px, 3860px);
+    max-width: 50%;
+    max-height: 66%;
+    object-fit: contain;
+  }
+  &.prize-image--final {
+    position: absolute;
+    bottom: myclamp(-120px, -120px, 1920px, 3860px);
+    left: myclamp(-0px, -40px, 1920px, 3860px);
+    max-width: 60%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}

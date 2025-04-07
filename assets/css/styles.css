@@ -117,6 +117,12 @@ body {
   overflow-y: auto;
 }
 
+html,
+body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -676,6 +682,7 @@ a {
     margin-top: 10px;
   }
   .dop {
+    display: none;
     position: relative;
     right: auto;
     bottom: auto;
@@ -1004,15 +1011,6 @@ a {
   border: 1px solid var(--white);
 }
 
-.prize-desctop {
-  display: block;
-}
-
-.prize-mobil {
-  display: none;
-  margin-bottom: auto;
-}
-
 .prize {
   display: flex;
   position: relative;
@@ -1081,12 +1079,6 @@ a {
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
-  .prize-mobil {
-    display: block;
-  }
-  .prize-desctop {
-    display: none;
-  }
   .subscribe-grid {
     flex-wrap: wrap;
   }
@@ -1394,6 +1386,50 @@ a {
     max-width: 320px;
   }
 }
+.prize-desctop {
+  display: block;
+}
+
+.prize-mobil {
+  display: none;
+  margin-bottom: auto;
+}
+
+@media (max-width: 1279px), (orientation: portrait) {
+  .prize-mobil {
+    display: block;
+  }
+  .prize-image.prize-image--subscribe,
+.prize-image.prize-image--popup,
+.prize-image.prize-image--final {
+    display: none;
+  }
+}
+.prize-image {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.prize-image.prize-image--subscribe {
+  position: absolute;
+  bottom: 0px;
+  left: clamp(40px, 2.0833vw, 80px);
+  max-width: 50%;
+  max-height: 66%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.prize-image.prize-image--final {
+  position: absolute;
+  bottom: calc(-1 * clamp(-120px, 6.25vw, 241px));
+  left: calc(-1 * clamp(0px, 2.0833vw, 80px));
+  max-width: 60%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 body.locked {
   overflow-x: hidden;
   overflow-y: hidden;
