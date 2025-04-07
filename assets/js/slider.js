@@ -42,7 +42,7 @@ const goToNextSlide = () => {
   let duration = 0;
 
   if (window.scrollY > 0) {
-    duration = 400;
+    duration = 300;
     scrollToBlock('body', duration);
   }
 
