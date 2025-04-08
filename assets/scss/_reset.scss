@@ -98,7 +98,8 @@ a {
   display: block !important;
 }
 
-.show_in_mobil {
+.show_in_mobil,
+.show_in_tablet {
   display: none;
 }
 
@@ -114,5 +115,8 @@ a {
 @media (max-width: 1279px) {
   .del_in_tablet {
     display: none;
+  }
+  .show_in_tablet {
+    display: block !important;
   }
 }

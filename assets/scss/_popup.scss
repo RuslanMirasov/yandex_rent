@@ -15,7 +15,7 @@ body.locked {
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: myclamp(20px, 50px, 1920px, 3860px) 20px;
+  padding: myclamp(20px, 50px, 1920px, 3860px) 5px;
   transition: 0.4s;
   opacity: 0;
   pointer-events: none;
@@ -110,8 +110,11 @@ body.locked {
   color: var(--viola);
   @media (max-width: 1279px) {
     width: 100%;
-    max-width: 375px;
+    max-width: 370px;
     padding: 50px 20px 5px 20px;
+  }
+  @media (max-width: 499px) {
+    max-width: 100%;
   }
 }
 
