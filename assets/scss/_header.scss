@@ -45,3 +45,21 @@
     }
   }
 }
+
+@media (max-height: 668px) {
+  .night,
+  .day {
+    .header {
+      height: 0px;
+    }
+    .main {
+      padding-bottom: 0px;
+    }
+    .text-content {
+      gap: 14px;
+    }
+    .slideImage {
+      margin-top: 0px;
+    }
+  }
+}

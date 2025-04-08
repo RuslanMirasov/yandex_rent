@@ -286,6 +286,24 @@ a {
     top: calc(100% + 26px);
   }
 }
+@media (max-height: 668px) {
+  .night .header,
+.day .header {
+    height: 0px;
+  }
+  .night .main,
+.day .main {
+    padding-bottom: 0px;
+  }
+  .night .text-content,
+.day .text-content {
+    gap: 14px;
+  }
+  .night .slideImage,
+.day .slideImage {
+    margin-top: 0px;
+  }
+}
 .button {
   display: flex;
   width: 100%;
