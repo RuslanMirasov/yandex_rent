@@ -14,7 +14,7 @@
 .title {
   display: block;
   opacity: 0;
-  transition: color 0.8s, opacity 0.8s;
+  transition: color 1.5s, opacity 1.5s;
 
   &.title--h1 {
     font-size: myclamp(32px, 80px, 1920px, 3860px);
@@ -60,7 +60,7 @@
 .night {
   .swiper-slide-active {
     .title {
-      transition: color 0.8s, opacity 0.8s ease 0.4s;
+      transition: color 1.5s, opacity 1.5s ease 0.4s;
     }
   }
 }
@@ -82,7 +82,7 @@
   font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
   opacity: 0;
-  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
+  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
   span {
     display: inline-block;
     position: relative;
@@ -102,7 +102,7 @@
   font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
   opacity: 0;
-  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
+  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 
 .dop {
@@ -125,7 +125,7 @@
   .text,
   .subtitle {
     opacity: 1;
-    transition: opacity 0.8s ease 0.4s, color 0.8s ease 0.4s;
+    transition: opacity 1.5s ease 0.4s, color 1.5s ease 0.4s;
   }
 }
 

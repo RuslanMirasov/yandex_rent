@@ -55,7 +55,7 @@
   margin-top: myclamp(14px, 20px, 1080px, 3860px);
   margin-bottom: myclamp(14px, 18px, 1080px, 3860px);
   z-index: 5;
-  transition: opacity 0.8s;
+  transition: opacity 1.5s;
   opacity: 0;
   outline: none;
 
@@ -69,7 +69,7 @@
   .icon {
     position: absolute;
     top: 0px;
-    transition: 0.8s;
+    transition: 1.5s;
   }
 
   img {
@@ -78,7 +78,7 @@
     left: 0px;
     top: 0px;
     transform: translate(0px, 0px) rotate(0deg);
-    transition: transform 0.8s, opacity 0.4s;
+    transition: transform 1.5s, opacity 0.4s;
   }
 
   &:hover,
@@ -95,7 +95,7 @@
 .swiper-slide-active {
   .get-present-button {
     opacity: 1;
-    transition: background-color 0.3s, opacity 0.8s ease 0.4s;
+    transition: background-color 0.3s, opacity 1.5s ease 0.4s;
   }
 }
 

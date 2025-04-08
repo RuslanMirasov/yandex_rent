@@ -16,7 +16,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: opacity 0.8s, height 0s;
+  transition: opacity 1.5s, height 0s;
   &.swiper-slide--final {
     padding-bottom: 0px;
     @media (min-width: 1024px) {
@@ -36,7 +36,7 @@
     overflow: visible;
     z-index: 2;
     opacity: 1;
-    transition: opacity 0.8s, height 0s linear 0.8s;
+    transition: opacity 1.5s, height 0s linear 1.5s;
   }
   .title.title--h2 {
     margin-top: myclamp(0px, -10px, 1920px, 3860px);

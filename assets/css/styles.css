@@ -255,11 +255,11 @@ a {
 
 .logo {
   display: block;
-  transition: 0.8s;
+  transition: 1.5s;
   width: clamp(150px, 15.5208vw, 599px);
 }
 .logo .icon {
-  transition: 0.8s;
+  transition: 1.5s;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -365,7 +365,7 @@ a {
   margin-top: clamp(14px, 1.8519vw, 71px);
   margin-bottom: clamp(14px, 1.6667vw, 64px);
   z-index: 5;
-  transition: opacity 0.8s;
+  transition: opacity 1.5s;
   opacity: 0;
   outline: none;
 }
@@ -378,7 +378,7 @@ a {
 .get-present-button .icon {
   position: absolute;
   top: 0px;
-  transition: 0.8s;
+  transition: 1.5s;
 }
 .get-present-button img {
   width: 100%;
@@ -386,7 +386,7 @@ a {
   left: 0px;
   top: 0px;
   transform: translate(0px, 0px) rotate(0deg);
-  transition: transform 0.8s, opacity 0.4s;
+  transition: transform 1.5s, opacity 0.4s;
 }
 .get-present-button:hover img.presentBox, .get-present-button:focus img.presentBox {
   transform: translate(5px, 15px) rotate(10deg);
@@ -397,7 +397,7 @@ a {
 
 .swiper-slide-active .get-present-button {
   opacity: 1;
-  transition: background-color 0.3s, opacity 0.8s ease 0.4s;
+  transition: background-color 0.3s, opacity 1.5s ease 0.4s;
 }
 
 .submit {
@@ -520,7 +520,7 @@ a {
   }
 }
 .background > div {
-  transition: opacity 0.8s;
+  transition: opacity 1.5s;
 }
 .background .background__night,
 .background .background__day {
@@ -559,12 +559,12 @@ a {
 
 .night .background__night {
   opacity: 1;
-  transition: opacity 0.8s ease-in-out 0.3s;
+  transition: opacity 1.5s ease-in-out 0.3s;
 }
 
 .day .background__day {
   opacity: 1;
-  transition: opacity 0.8s ease-in-out 0.3s;
+  transition: opacity 1.5s ease-in-out 0.3s;
 }
 
 .foregrounds {
@@ -590,13 +590,13 @@ a {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 1.5s;
   background: url("../img/svg/light_static.svg") no-repeat right top/cover;
   pointer-events: none;
 }
 .light.light--animated {
   width: 0%;
-  transition: opacity 0.8s ease-in-out 0s, width 0s linear 0.8s;
+  transition: opacity 1.5s ease-in-out 0s, width 0s linear 1.5s;
   background: url("../img/svg/light.svg") no-repeat right top/cover;
 }
 
@@ -630,7 +630,7 @@ a {
 .title {
   display: block;
   opacity: 0;
-  transition: color 0.8s, opacity 0.8s;
+  transition: color 1.5s, opacity 1.5s;
 }
 .title.title--h1 {
   font-size: clamp(32px, 4.1667vw, 161px);
@@ -665,7 +665,7 @@ a {
 
 .day .swiper-slide-active .title,
 .night .swiper-slide-active .title {
-  transition: color 0.8s, opacity 0.8s ease 0.4s;
+  transition: color 1.5s, opacity 1.5s ease 0.4s;
 }
 
 .on .swiper-slide-active .title {
@@ -681,7 +681,7 @@ a {
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
   opacity: 0;
-  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
+  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 .subtitle span {
   display: inline-block;
@@ -701,7 +701,7 @@ a {
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
   opacity: 0;
-  transition: opacity 0.8s ease 0s, color 0.8s ease 0s;
+  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 
 .dop {
@@ -723,7 +723,7 @@ a {
 .swiper-slide-active .text,
 .swiper-slide-active .subtitle {
   opacity: 1;
-  transition: opacity 0.8s ease 0.4s, color 0.8s ease 0.4s;
+  transition: opacity 1.5s ease 0.4s, color 1.5s ease 0.4s;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -904,7 +904,7 @@ a {
   pointer-events: none;
   z-index: 1;
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 1.5s;
   right: 0px;
   bottom: 0px;
   width: 100%;
@@ -1392,7 +1392,7 @@ a {
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: opacity 0.8s, height 0s;
+  transition: opacity 1.5s, height 0s;
 }
 .swiper-slide.swiper-slide--final {
   padding-bottom: 0px;
@@ -1413,7 +1413,7 @@ a {
   overflow: visible;
   z-index: 2;
   opacity: 1;
-  transition: opacity 0.8s, height 0s linear 0.8s;
+  transition: opacity 1.5s, height 0s linear 1.5s;
 }
 .swiper-slide .title.title--h2 {
   margin-top: calc(-1 * clamp(0px, 0.5208vw, 20px));
