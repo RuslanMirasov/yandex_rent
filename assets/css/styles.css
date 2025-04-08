@@ -286,7 +286,7 @@ a {
     top: calc(100% + 26px);
   }
 }
-@media (max-height: 668px) {
+@media screen and (max-height: 668px) and (max-width: 767px) {
   .night .header,
 .day .header {
     height: 0px;
@@ -301,6 +301,14 @@ a {
   }
   .night .slideImage,
 .day .slideImage {
+    margin-top: 0px;
+  }
+  .night .slideImage.slideImage--welcome,
+.day .slideImage.slideImage--welcome {
+    margin-top: -20px;
+  }
+  .night .swiper-slide.swiper-slide--fobia-5-done .slideImage,
+.day .swiper-slide.swiper-slide--fobia-5-done .slideImage {
     margin-top: 0px;
   }
 }

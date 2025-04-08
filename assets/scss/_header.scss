@@ -46,7 +46,7 @@
   }
 }
 
-@media (max-height: 668px) {
+@media screen and (max-height: 668px) and (max-width: 767px) {
   .night,
   .day {
     .header {
@@ -59,6 +59,12 @@
       gap: 14px;
     }
     .slideImage {
+      margin-top: 0px;
+      &.slideImage--welcome {
+        margin-top: -20px;
+      }
+    }
+    .swiper-slide.swiper-slide--fobia-5-done .slideImage {
       margin-top: 0px;
     }
   }
