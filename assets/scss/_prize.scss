@@ -10,6 +10,10 @@
 @media (max-width: 1279px), (orientation: portrait) {
   .prize-mobil {
     display: block;
+    &.closer-to-block {
+      margin-bottom: -30%;
+      z-index: 0;
+    }
   }
 
   .prize-image.prize-image--subscribe,

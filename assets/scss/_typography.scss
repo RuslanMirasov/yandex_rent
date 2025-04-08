@@ -218,3 +218,9 @@
     max-width: 290px;
   }
 }
+
+@media (max-width: 1279px) {
+  .popup-content .title.title--h2 {
+    font-size: 26px;
+  }
+}

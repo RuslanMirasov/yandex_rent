@@ -1,5 +1,15 @@
 import { Popup } from './popup-manager.js';
-import { initConnect, initSprites } from './connect.js';
+
+const initSprites = url => {
+  fetch(url)
+    .then(response => response.text())
+    .then(svg => {
+      const div = document.createElement('div');
+      div.style.display = 'none';
+      div.innerHTML = svg;
+      document.body.insertBefore(div, document.body.firstChild);
+    });
+};
 
 export const subscribe = async (data, btn) => {
   if (!data || !btn) return;
@@ -27,7 +37,5 @@ export const subscribe = async (data, btn) => {
   }
 };
 
-initConnect().then(() => {
-  initSprites('./assets/img/svg/sprite.svg');
-  Popup.init('./components/popups.html', ['subscribe']);
-});
+initSprites('./assets/img/svg/sprite.svg');
+Popup.init('./components/popups.html', ['subscribe']);

@@ -3,7 +3,7 @@
 
   <div class="subscribe-grid">
     <div class="subscribe-grid__left">
-      <h2 class="title title--h2">Это было <br />очень смело!</h2>
+      <h2 class="title title--h2">Промокод <br class="keep" />на +10% к первой <br />арендной плате</h2>
       <img
         src="./assets/img/prize/prize_popup.webp"
         alt="Яндекс аренда"
@@ -13,12 +13,38 @@
         class="prize-image prize-image--popup"
       />
     </div>
-    <div class="subscribe-grid__right">
-      <connect src="./components/subscribe-form.html" />
+    <div class="prize-mobil closer-to-block">
+      <img src="./assets/img/prize/prize_mobil.webp" alt="Яндекс аренда" width="100%" height="auto" loading="lazy" class="prize-image" />
     </div>
-  </div>
-  <div class="prize-mobil">
-    <img src="./assets/img/prize/prize_mobil.webp" alt="Яндекс аренда" width="100%" height="auto" loading="lazy" class="prize-image" />
+    <div class="subscribe-grid__right">
+      <form action="#" novalidate data-subscribe class="subscribe-form">
+        <p class="form-description">
+          <span>
+            Подпишитесь, чтобы получить <br />
+            промокод, и принять участие <br />
+            в розыгрыше 1 из 10 Яндекс <br />
+            Станций Миди за 1 рубль!
+          </span>
+        </p>
+        <label>
+          <input type="email" name="email" placeholder="E-mail" class="input" required />
+        </label>
+        <label>
+          <input type="checkbox" name="agree" class="checkbox" checked required />
+          <span>
+            <span>
+              Я даю согласие <a href="https://yandex.ru/legal/lease_termsofuse/?lang=ru" target="_blank">ООО «Яндекс.Вертикали»</a> на обработку моих
+              персональных данных в целях направления мне сообщений рекламного характера
+            </span>
+          </span>
+        </label>
+        <button type="submit" class="submit"><span>Подписаться</span></button>
+      </form>
+
+      <span class="rules">
+        <a href="https://yandex.ru/legal/arenda_no_phobia/" target="_blank">Подробнее о правилах розыгрыша</a>
+      </span>
+    </div>
   </div>
 </div>
 

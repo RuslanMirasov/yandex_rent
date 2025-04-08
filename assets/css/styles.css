@@ -365,7 +365,7 @@ a {
   margin-top: clamp(14px, 1.8519vw, 71px);
   margin-bottom: clamp(14px, 1.6667vw, 64px);
   z-index: 5;
-  transition: opacity 1.5s;
+  transition: opacity 0.6s;
   opacity: 0;
   outline: none;
 }
@@ -378,7 +378,7 @@ a {
 .get-present-button .icon {
   position: absolute;
   top: 0px;
-  transition: 1.5s;
+  transition: 0.6s;
 }
 .get-present-button img {
   width: 100%;
@@ -386,7 +386,7 @@ a {
   left: 0px;
   top: 0px;
   transform: translate(0px, 0px) rotate(0deg);
-  transition: transform 1.5s, opacity 0.4s;
+  transition: transform 0.6s, opacity 0.4s;
 }
 .get-present-button:hover img.presentBox, .get-present-button:focus img.presentBox {
   transform: translate(5px, 15px) rotate(10deg);
@@ -804,6 +804,11 @@ a {
     max-width: 290px;
   }
 }
+@media (max-width: 1279px) {
+  .popup-content .title.title--h2 {
+    font-size: 26px;
+  }
+}
 .tutorial {
   display: flex;
   justify-content: space-between;
@@ -974,6 +979,12 @@ a {
 .subscribe-grid .subscribe-grid__right {
   width: 42%;
   order: 0;
+  z-index: 2;
+}
+
+.popup-content .subscribe-grid {
+  align-items: center;
+  align-content: center;
 }
 
 .form-description {
@@ -989,12 +1000,19 @@ a {
     display: none;
   }
 }
+@media (max-width: 374px) {
+  .form-description span br {
+    display: none;
+  }
+}
 
 .subscribe-form {
   display: flex;
   width: 100%;
   flex-direction: column;
   gap: clamp(20px, 1.0417vw, 40px);
+  position: relative;
+  z-index: 1;
 }
 
 .rules {
@@ -1165,7 +1183,7 @@ a {
     border-radius: 30px;
     background: var(--viola);
     margin-bottom: 30px;
-    margin-top: -80px;
+    margin-top: 0px;
   }
   .more-about-us .button {
     height: 50px;
@@ -1230,6 +1248,11 @@ a {
 @media (max-width: 374px) {
   .prize ul li {
     font-size: 12px;
+  }
+}
+@media (max-width: 1279px) {
+  .swiper-slide.swiper-slide--subscribe-now {
+    padding-bottom: 72px;
   }
 }
 .input {
@@ -1431,6 +1454,9 @@ a {
   .swiper-slide.swiper-slide--final {
     padding-top: 30px;
   }
+  .swiper-slide.swiper-slide--final .rules {
+    display: none;
+  }
   .swiper-slide.swiper-slide--final .subscribe__image {
     top: auto;
   }
@@ -1450,6 +1476,10 @@ a {
 @media (max-width: 1279px), (orientation: portrait) {
   .prize-mobil {
     display: block;
+  }
+  .prize-mobil.closer-to-block {
+    margin-bottom: -30%;
+    z-index: 0;
   }
   .prize-image.prize-image--subscribe,
 .prize-image.prize-image--popup,
@@ -1599,7 +1629,7 @@ body.locked {
   #subscribe {
     width: 100%;
     max-width: 375px;
-    padding: 50px 20px 20px 20px;
+    padding: 50px 20px 5px 20px;
   }
 }
 

@@ -13,6 +13,14 @@
   .subscribe-grid__right {
     width: 42%;
     order: 0;
+    z-index: 2;
+  }
+}
+
+.popup-content {
+  .subscribe-grid {
+    align-items: center;
+    align-content: center;
   }
 }
 
@@ -28,6 +36,11 @@
       display: none;
     }
   }
+  @media (max-width: 374px) {
+    span br {
+      display: none;
+    }
+  }
 }
 
 .subscribe-form {
@@ -35,6 +48,8 @@
   width: 100%;
   flex-direction: column;
   gap: myclamp(20px, 20px, 1920px, 3860px);
+  position: relative;
+  z-index: 1;
 }
 
 .rules {
@@ -206,7 +221,7 @@
     border-radius: 30px;
     background: var(--viola);
     margin-bottom: 30px;
-    margin-top: -80px;
+    margin-top: 0px;
     .button {
       height: 50px;
       border: 2px solid var(--white);
@@ -286,5 +301,11 @@
         font-size: 12px;
       }
     }
+  }
+}
+
+@media (max-width: 1279px) {
+  .swiper-slide.swiper-slide--subscribe-now {
+    padding-bottom: 72px;
   }
 }

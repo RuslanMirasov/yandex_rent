@@ -55,6 +55,9 @@
     // min-height: 20px;
     &.swiper-slide--final {
       padding-top: 30px;
+      .rules {
+        display: none;
+      }
       .subscribe__image {
         top: auto;
       }
