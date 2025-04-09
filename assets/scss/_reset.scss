@@ -99,6 +99,7 @@ a {
 }
 
 .show_in_mobil,
+.show_in_tablet_and_delete_in_mobil,
 .show_in_tablet {
   display: none;
 }
@@ -118,5 +119,20 @@ a {
   }
   .show_in_tablet {
     display: block !important;
+  }
+}
+
+@media (max-width: 1279px) and (min-width: 768px) {
+  .show_in_tablet_and_delete_in_mobil {
+    display: block !important;
+  }
+}
+
+@media (max-width: 374px) {
+  .not-keep {
+    display: none !important;
+  }
+  .form-description span {
+    font-size: 13px;
   }
 }

@@ -111,7 +111,7 @@
   bottom: myclamp(92px, 110px, 1920px, 3860px);
   font-size: myclamp(10px, 12px, 1920px, 3860px);
   padding-left: myclamp(0px, 250px, 1920px, 3860px);
-  padding-top: myclamp(0px, 30px, 1920px, 3860px);
+  padding-top: myclamp(14px, 30px, 1920px, 3860px);
   z-index: 2;
   line-height: 1.4;
   color: #909090;
@@ -143,15 +143,15 @@
   }
 
   .dop {
-    display: none;
+    //display: none;
     position: relative;
     right: auto;
     bottom: auto;
     padding-left: 0px;
-    padding-top: 20px;
+    //padding-top: 20px;
     font-size: 12px;
-    max-width: 300px;
-    margin-bottom: auto;
+    // max-width: 400px;
+    //margin-bottom: auto;
   }
 }
 
@@ -176,9 +176,6 @@
     br {
       display: none;
     }
-  }
-  .dop {
-    padding-top: 20px;
   }
 
   .swiper-slide.swiper-slide--welcome .subtitle {

@@ -91,7 +91,7 @@
     z-index: 0;
     background: var(--viola);
     border-radius: myclamp(30px, 80px, 1920px, 3860px);
-    @media (max-height: 55vw) {
+    @media (max-height: 52.2vw) {
       border-radius: myclamp(30px, 80px, 1920px, 3860px) myclamp(30px, 80px, 1920px, 3860px) 0px 0px;
       bottom: myclamp(-20px, -80px, 1920px, 3860px);
     }
@@ -307,5 +307,11 @@
 @media (max-width: 1279px) {
   .swiper-slide.swiper-slide--subscribe-now {
     padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 374px) {
+  .more-about-us p {
+    font-size: 13px;
   }
 }

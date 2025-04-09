@@ -21,6 +21,9 @@
     .subscribe-form {
       gap: myclamp(20px, 32px, 1920px, 3860px);
     }
+    .title.title--h5 {
+      font-size: myclamp(22px, 34px, 1920px, 3860px);
+    }
     .rules {
       margin-top: myclamp(14px, 32px, 1920px, 3860px);
     }
