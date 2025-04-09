@@ -17,6 +17,14 @@
   top: 0px;
   left: 0px;
   transition: opacity 1.5s, height 0s;
+  &.swiper-slide--subscribe-now {
+    .subscribe-form {
+      gap: myclamp(20px, 32px, 1920px, 3860px);
+    }
+    .rules {
+      margin-top: myclamp(14px, 32px, 1920px, 3860px);
+    }
+  }
   &.swiper-slide--final {
     padding-bottom: 0px;
     @media (min-width: 1024px) {

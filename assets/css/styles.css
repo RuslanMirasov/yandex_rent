@@ -1421,6 +1421,12 @@ a {
   left: 0px;
   transition: opacity 1.5s, height 0s;
 }
+.swiper-slide.swiper-slide--subscribe-now .subscribe-form {
+  gap: clamp(20px, 1.6667vw, 64px);
+}
+.swiper-slide.swiper-slide--subscribe-now .rules {
+  margin-top: clamp(14px, 1.6667vw, 64px);
+}
 .swiper-slide.swiper-slide--final {
   padding-bottom: 0px;
 }
