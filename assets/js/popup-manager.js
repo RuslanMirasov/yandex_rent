@@ -156,6 +156,7 @@ export const Popup = {
       let finished = false;
 
       const handler = e => {
+        e.stopPropagation();
         if (e.propertyName !== propertyName) return;
         finished = true;
         element.removeEventListener('transitionend', handler);
@@ -178,12 +179,14 @@ export const Popup = {
 
   _bindCloseEvents() {
     document.addEventListener('click', e => {
+      e.stopPropagation();
       const openBtn = e.target.closest('[data-popup-open]');
       if (!openBtn || this._isAnimating) return;
 
       const popupId = openBtn.dataset.popupOpen;
       if (popupId) {
         e.preventDefault();
+        e.stopPropagation();
         this.open(popupId);
       }
     });
@@ -197,6 +200,7 @@ export const Popup = {
 
     if (this._backdrop) {
       this._backdrop.addEventListener('click', e => {
+        e.stopPropagation();
         if (this._isAnimating) return;
         if (e.target === this._backdrop || e.target.hasAttribute('data-popup-close')) {
           this.close();
