@@ -273,11 +273,13 @@ a {
 
 .logo {
   display: block;
-  transition: 1.5s;
+  opacity: 0;
+  transition: opacity 0.6s;
   width: clamp(150px, 15.5208vw, 599px);
 }
-.logo .icon {
-  transition: 1.5s;
+
+body.show-slide .logo {
+  opacity: 1;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -383,8 +385,6 @@ a {
   margin-top: clamp(14px, 1.8519vw, 71px);
   margin-bottom: clamp(14px, 1.6667vw, 64px);
   z-index: 5;
-  transition: opacity 0.6s;
-  opacity: 0;
   outline: none;
 }
 .get-present-button:before {
@@ -404,7 +404,7 @@ a {
   left: 0px;
   top: 0px;
   transform: translate(0px, 0px) rotate(0deg);
-  transition: transform 0.6s, opacity 0.4s;
+  transition: transform 0.5s, opacity 0.4s;
 }
 @media (hover: hover) {
   .get-present-button:hover img.presentBox {
@@ -413,11 +413,6 @@ a {
   .get-present-button:hover img.presentLid {
     transform: translate(-5px, -5px) rotate(-10deg);
   }
-}
-
-.swiper-slide-active .get-present-button {
-  opacity: 1;
-  transition: background-color 0.3s, opacity 1.5s ease 0.4s;
 }
 
 .submit {
@@ -540,7 +535,7 @@ a {
   }
 }
 .background > div {
-  transition: opacity 1.5s;
+  transition: opacity 0.6s;
 }
 .background .background__night,
 .background .background__day {
@@ -579,12 +574,10 @@ a {
 
 .night .background__night {
   opacity: 1;
-  transition: opacity 1.5s ease-in-out 0.3s;
 }
 
 .day .background__day {
   opacity: 1;
-  transition: opacity 1.5s ease-in-out 0.3s;
 }
 
 .foregrounds {
@@ -610,13 +603,13 @@ a {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 1.5s;
+  transition: opacity 0.6s;
   background: url("../img/svg/light_static.svg") no-repeat right top/cover;
   pointer-events: none;
 }
 .light.light--animated {
   width: 0%;
-  transition: opacity 1.5s ease-in-out 0s, width 0s linear 1.5s;
+  transition: opacity 0.6s ease-in-out 0s;
   background: url("../img/svg/light.svg") no-repeat right top/cover;
 }
 
@@ -649,8 +642,6 @@ a {
 
 .title {
   display: block;
-  opacity: 0;
-  transition: color 1.5s, opacity 1.5s;
 }
 .title.title--h1 {
   font-size: clamp(32px, 4.1667vw, 161px);
@@ -677,21 +668,6 @@ a {
   color: #9353f1;
 }
 
-.day .swiper-slide-active .title,
-.night .swiper-slide-active .title,
-.form .swiper-slide-active .title {
-  opacity: 1;
-}
-
-.day .swiper-slide-active .title,
-.night .swiper-slide-active .title {
-  transition: color 1.5s, opacity 1.5s ease 0.4s;
-}
-
-.on .swiper-slide-active .title {
-  opacity: 0;
-}
-
 .day .title.title--h5 span {
   color: #c3b1e8;
 }
@@ -700,8 +676,6 @@ a {
   display: block;
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 .subtitle span {
   display: inline-block;
@@ -720,8 +694,6 @@ a {
   position: relative;
   font-size: clamp(14px, 1.1458vw, 44px);
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 
 .dop {
@@ -738,12 +710,6 @@ a {
 .dop a {
   display: inline;
   text-decoration: underline;
-}
-
-.swiper-slide-active .text,
-.swiper-slide-active .subtitle {
-  opacity: 1;
-  transition: opacity 1.5s ease 0.4s, color 1.5s ease 0.4s;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {
@@ -921,8 +887,6 @@ a {
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 1.5s;
   right: 0px;
   bottom: 0px;
   width: 100%;
@@ -934,10 +898,6 @@ a {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.swiper-slide-active .slideImage {
-  opacity: 1;
 }
 
 .slideImage--welcome {
@@ -1437,12 +1397,12 @@ a {
       -ms-user-select: none;
           user-select: none;
   overflow: hidden;
-  opacity: 0;
   z-index: 1;
   position: absolute;
   top: 0px;
   left: 0px;
-  transition: opacity 1.5s, height 0s;
+  opacity: 0;
+  transition: opacity 0.6s;
 }
 .swiper-slide.swiper-slide--subscribe-now .subscribe-form {
   gap: clamp(20px, 1.6667vw, 64px);
@@ -1471,11 +1431,13 @@ a {
   position: relative;
   overflow: visible;
   z-index: 2;
-  opacity: 1;
-  transition: opacity 1.5s, height 0s linear 1.5s;
 }
 .swiper-slide .title.title--h2 {
   margin-top: calc(-1 * clamp(0px, 0.5208vw, 20px));
+}
+
+body.show-slide .swiper-slide.swiper-slide-active {
+  opacity: 1;
 }
 
 @media (max-width: 1279px), (orientation: portrait) {

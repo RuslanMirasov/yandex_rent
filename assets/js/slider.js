@@ -17,18 +17,31 @@ const onHashChange = () => {
 const openSlide = hash => {
   if (!hash || !allSlides.length) return;
   const activeSlide = document.querySelector('.swiper-slide-active');
-  const targetSlide = document.querySelector(`[data-hash="${hash}"]`);
-  if (activeSlide) {
-    activeSlide.classList.remove('swiper-slide-active');
-  }
-  if (targetSlide) {
-    targetSlide.classList.add('swiper-slide-active');
+  const targetSlide = document.querySelector(`[data-hash="${hash}"]`) || allSlides[0];
+  document.body.classList.remove('show-slide');
+
+  setTimeout(() => {
+    if (activeSlide) {
+      activeSlide.classList.remove('swiper-slide-active');
+    }
+  }, 600);
+
+  setTimeout(() => {
     changeTheme(targetSlide.dataset.theme);
-    return;
-  }
-  const mainSlide = allSlides[0];
-  mainSlide.classList.add('swiper-slide-active');
-  changeTheme(mainSlide.dataset.theme);
+    if (targetSlide) {
+      document.body.classList.add('show-slide');
+      targetSlide.classList.add('swiper-slide-active');
+    }
+  }, 610);
+
+  // if (targetSlide) {
+  //   targetSlide.classList.add('swiper-slide-active');
+  //   changeTheme(targetSlide.dataset.theme);
+  //   return;
+  // }
+  // const mainSlide = allSlides[0];
+  // mainSlide.classList.add('swiper-slide-active');
+  //changeTheme(mainSlide.dataset.theme);
 };
 
 const changeTheme = theme => {
@@ -42,7 +55,7 @@ const goToNextSlide = () => {
   let duration = 0;
 
   if (window.scrollY > 0) {
-    duration = 300;
+    duration = 400;
     scrollToBlock('body', duration);
   }
 
@@ -56,17 +69,17 @@ const goToNextSlide = () => {
   }, duration);
 };
 
-const turnOnTheLight = () => {
-  const isMobil = window.outerWidth < 768;
-  const duration = isMobil ? 0 : 300;
-  !isMobil && document.body.classList.add('on');
-  setTimeout(() => {
-    !isMobil && document.body.classList.remove('on');
-    goToNextSlide();
-  }, duration);
-};
+// const turnOnTheLight = () => {
+//   const isMobil = window.outerWidth < 768;
+//   const duration = isMobil ? 0 : 300;
+//   !isMobil && document.body.classList.add('on');
+//   setTimeout(() => {
+//     !isMobil && document.body.classList.remove('on');
+//     goToNextSlide();
+//   }, duration);
+// };
 
 document.addEventListener('DOMContentLoaded', onHashChange);
 window.addEventListener('hashchange', onHashChange);
 nextButtons.forEach(btn => btn.addEventListener('click', goToNextSlide));
-switchers.forEach(switcher => switcher.addEventListener('click', turnOnTheLight));
+switchers.forEach(switcher => switcher.addEventListener('click', goToNextSlide));

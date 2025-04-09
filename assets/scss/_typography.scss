@@ -13,8 +13,8 @@
 
 .title {
   display: block;
-  opacity: 0;
-  transition: color 1.5s, opacity 1.5s;
+  // opacity: 0;
+  // transition: color 1.5s, opacity 1.5s;
 
   &.title--h1 {
     font-size: myclamp(32px, 80px, 1920px, 3860px);
@@ -46,32 +46,32 @@
   }
 }
 
-.day,
-.night,
-.form {
-  .swiper-slide-active {
-    .title {
-      opacity: 1;
-    }
-  }
-}
+// .day,
+// .night,
+// .form {
+//   .swiper-slide-active {
+//     .title {
+//       opacity: 1;
+//     }
+//   }
+// }
 
-.day,
-.night {
-  .swiper-slide-active {
-    .title {
-      transition: color 1.5s, opacity 1.5s ease 0.4s;
-    }
-  }
-}
+// .day,
+// .night {
+//   .swiper-slide-active {
+//     .title {
+//       transition: color 1.5s, opacity 1.5s ease 0.4s;
+//     }
+//   }
+// }
 
-.on {
-  .swiper-slide-active {
-    .title {
-      opacity: 0;
-    }
-  }
-}
+// .on {
+//   .swiper-slide-active {
+//     .title {
+//       opacity: 0;
+//     }
+//   }
+// }
 
 .day .title.title--h5 span {
   color: #c3b1e8;
@@ -81,8 +81,8 @@
   display: block;
   font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
+  // opacity: 0;
+  // transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
   span {
     display: inline-block;
     position: relative;
@@ -101,8 +101,8 @@
   position: relative;
   font-size: myclamp(14px, 22px, 1920px, 3860px);
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
+  // opacity: 0;
+  // transition: opacity 1.5s ease 0s, color 1.5s ease 0s;
 }
 
 .dop {
@@ -121,13 +121,13 @@
   }
 }
 
-.swiper-slide-active {
-  .text,
-  .subtitle {
-    opacity: 1;
-    transition: opacity 1.5s ease 0.4s, color 1.5s ease 0.4s;
-  }
-}
+// .swiper-slide-active {
+//   .text,
+//   .subtitle {
+//     opacity: 1;
+//     transition: opacity 1.5s ease 0.4s, color 1.5s ease 0.4s;
+//   }
+// }
 
 @media (max-width: 1279px), (orientation: portrait) {
   .title {

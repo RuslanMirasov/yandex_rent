@@ -3,8 +3,8 @@
   position: absolute;
   pointer-events: none;
   z-index: 1;
-  opacity: 0;
-  transition: opacity 1.5s;
+  // opacity: 0;
+  // transition: opacity 1.5s;
   right: 0px;
   bottom: 0px;
   width: 100%;
@@ -17,9 +17,9 @@
   }
 }
 
-.swiper-slide-active .slideImage {
-  opacity: 1;
-}
+// .swiper-slide-active .slideImage {
+//   opacity: 1;
+// }
 
 .slideImage--welcome {
   width: 27%;

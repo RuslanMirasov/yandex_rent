@@ -55,8 +55,8 @@
   margin-top: myclamp(14px, 20px, 1080px, 3860px);
   margin-bottom: myclamp(14px, 18px, 1080px, 3860px);
   z-index: 5;
-  transition: opacity 0.6s;
-  opacity: 0;
+  // transition: opacity 0.6s;
+  // opacity: 1;
   outline: none;
 
   &:before {
@@ -78,7 +78,7 @@
     left: 0px;
     top: 0px;
     transform: translate(0px, 0px) rotate(0deg);
-    transition: transform 0.6s, opacity 0.4s;
+    transition: transform 0.5s, opacity 0.4s;
   }
 
   @media (hover: hover) {
@@ -93,12 +93,12 @@
   }
 }
 
-.swiper-slide-active {
-  .get-present-button {
-    opacity: 1;
-    transition: background-color 0.3s, opacity 1.5s ease 0.4s;
-  }
-}
+// .swiper-slide-active {
+//   .get-present-button {
+//     opacity: 1;
+//     transition: background-color 0.3s, opacity 1.5s ease 0.4s;
+//   }
+// }
 
 //============================= SUBMIT BUTTON
 
@@ -162,10 +162,6 @@
       content: none;
     }
   }
-
-  // &:hover {
-  //   background: var(--orange);
-  // }
 }
 
 @keyframes rotate {
@@ -184,11 +180,6 @@
     line-height: 1.1;
     letter-spacing: 0em;
 
-    // &.button--yellow {
-    //   border: none;
-    //   background-color: #ffe25f;
-    //   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    // }
     &.button--light {
       box-shadow: 0px 0px 30px var(--orange);
       &:hover {

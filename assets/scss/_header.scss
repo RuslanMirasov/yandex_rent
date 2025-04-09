@@ -11,10 +11,14 @@
 
 .logo {
   display: block;
-  transition: 1.5s;
+  opacity: 0;
+  transition: opacity 0.6s;
   width: myclamp(150px, 298px, 1920px, 3860px);
-  .icon {
-    transition: 1.5s;
+}
+
+body.show-slide {
+  .logo {
+    opacity: 1;
   }
 }
 
