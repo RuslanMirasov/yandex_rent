@@ -34,8 +34,11 @@ body.show-slide {
     top: calc(100% + 40px);
   }
 
+  .body.form .header {
+    height: 50px;
+  }
   .body.form .header .logo {
-    top: auto;
+    top: 75%;
   }
 }
 

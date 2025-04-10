@@ -64,6 +64,19 @@
   --logo-sub: #cbb1ff;
 }
 
+@media (max-width: 1279px) {
+  .form {
+    --bg: #f8d849;
+
+    --logo-color: #7d24ff;
+    --logo-bg: #cbb1ff;
+    --logo-border: #cbb1ff;
+    --logo-ring: #ffffff;
+    --logo-card: #7d24ff;
+    --logo-sub: #cbb1ff;
+  }
+}
+
 @import 'mixins';
 @import 'fonts';
 @import 'reset';

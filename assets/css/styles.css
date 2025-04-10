@@ -60,6 +60,17 @@
   --logo-sub: #cbb1ff;
 }
 
+@media (max-width: 1279px) {
+  .form {
+    --bg: #f8d849;
+    --logo-color: #7d24ff;
+    --logo-bg: #cbb1ff;
+    --logo-border: #cbb1ff;
+    --logo-ring: #ffffff;
+    --logo-card: #7d24ff;
+    --logo-sub: #cbb1ff;
+  }
+}
 @font-face {
   font-family: "Halvar Breitschrift";
   src: url("../fonts/halvarbreit_extra_bold.woff2") format("woff2"), url("../fonts/halvarbreit_extra_bold.woff") format("woff");
@@ -292,8 +303,11 @@ body.show-slide .logo {
     left: 20px;
     top: calc(100% + 40px);
   }
+  .body.form .header {
+    height: 50px;
+  }
   .body.form .header .logo {
-    top: auto;
+    top: 75%;
   }
 }
 @media (max-width: 767px) {
@@ -1404,6 +1418,12 @@ body.show-slide.day .light.light--animated {
 }
 .swiper-slide.swiper-slide--subscribe-now .rules {
   margin-top: clamp(14px, 1.6667vw, 64px);
+}
+@media (max-width: 1279px) {
+  .swiper-slide.swiper-slide--subscribe-now .button.button--yellow {
+    width: calc(100% - 40px);
+    left: 20px;
+  }
 }
 .swiper-slide.swiper-slide--final {
   padding-bottom: 0px;

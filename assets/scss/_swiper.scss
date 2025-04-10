@@ -27,6 +27,12 @@
     .rules {
       margin-top: myclamp(14px, 32px, 1920px, 3860px);
     }
+    @media (max-width: 1279px) {
+      .button.button--yellow {
+        width: calc(100% - 40px);
+        left: 20px;
+      }
+    }
   }
   &.swiper-slide--final {
     padding-bottom: 0px;
