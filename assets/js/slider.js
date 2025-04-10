@@ -16,13 +16,17 @@ const onHashChange = () => {
 
 const openSlide = hash => {
   if (!hash || !allSlides.length) return;
-  const activeSlide = document.querySelector('.swiper-slide-active');
+  if (document.body.classList.contains('in-processe')) return;
+  const activeSlides = document.querySelectorAll('.swiper-slide-active');
   const targetSlide = document.querySelector(`[data-hash="${hash}"]`) || allSlides[0];
+  document.body.classList.add('in-processe');
   document.body.classList.remove('show-slide');
 
   setTimeout(() => {
-    if (activeSlide) {
-      activeSlide.classList.remove('swiper-slide-active');
+    if (activeSlides.length > 0) {
+      activeSlides.forEach(slide => {
+        slide.classList.remove('swiper-slide-active');
+      });
     }
   }, 600);
 
@@ -32,16 +36,8 @@ const openSlide = hash => {
       document.body.classList.add('show-slide');
       targetSlide.classList.add('swiper-slide-active');
     }
+    document.body.classList.remove('in-processe');
   }, 610);
-
-  // if (targetSlide) {
-  //   targetSlide.classList.add('swiper-slide-active');
-  //   changeTheme(targetSlide.dataset.theme);
-  //   return;
-  // }
-  // const mainSlide = allSlides[0];
-  // mainSlide.classList.add('swiper-slide-active');
-  //changeTheme(mainSlide.dataset.theme);
 };
 
 const changeTheme = theme => {
@@ -51,6 +47,7 @@ const changeTheme = theme => {
 };
 
 const goToNextSlide = () => {
+  if (document.body.classList.contains('in-processe')) return;
   if (!slideCollection.length) return;
   let duration = 0;
 
@@ -68,16 +65,6 @@ const goToNextSlide = () => {
     window.location.hash = nextHash;
   }, duration);
 };
-
-// const turnOnTheLight = () => {
-//   const isMobil = window.outerWidth < 768;
-//   const duration = isMobil ? 0 : 300;
-//   !isMobil && document.body.classList.add('on');
-//   setTimeout(() => {
-//     !isMobil && document.body.classList.remove('on');
-//     goToNextSlide();
-//   }, duration);
-// };
 
 document.addEventListener('DOMContentLoaded', onHashChange);
 window.addEventListener('hashchange', onHashChange);
