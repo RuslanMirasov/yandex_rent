@@ -1,16 +1,5 @@
 import { Popup } from './popup-manager.js';
 
-const initSprites = url => {
-  fetch(url)
-    .then(response => response.text())
-    .then(svg => {
-      const div = document.createElement('div');
-      div.style.display = 'none';
-      div.innerHTML = svg;
-      document.body.insertBefore(div, document.body.firstChild);
-    });
-};
-
 export const subscribe = async (data, btn) => {
   if (!data || !btn) return;
   const { email } = data;
@@ -37,5 +26,4 @@ export const subscribe = async (data, btn) => {
   }
 };
 
-initSprites('./assets/img/svg/sprite.svg');
 Popup.init('./components/popups.html', ['subscribe']);
