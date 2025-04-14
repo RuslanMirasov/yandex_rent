@@ -22,6 +22,9 @@
   &.title--h2 {
     font-size: myclamp(32px, 52px, 1920px, 3860px);
     line-height: 1;
+    &.smaller {
+      font-size: myclamp(28px, 52px, 1920px, 3860px);
+    }
   }
 
   &.title--h3 {

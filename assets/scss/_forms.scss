@@ -116,7 +116,7 @@
 }
 
 .agree__text {
-  max-width: myclamp(202px, 375px, 1920px, 3860px);
+  max-width: myclamp(202px, 400px, 1920px, 3860px);
   @media (max-width: 1279px) {
     max-width: 202px;
   }

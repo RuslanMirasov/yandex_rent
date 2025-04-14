@@ -657,6 +657,9 @@ body.show-slide.day .light.light--animated {
   font-size: clamp(32px, 2.7083vw, 105px);
   line-height: 1;
 }
+.title.title--h2.smaller {
+  font-size: clamp(28px, 2.7083vw, 105px);
+}
 .title.title--h3 {
   font-size: clamp(20px, 2.9167vw, 113px);
   line-height: 1;
@@ -856,7 +859,7 @@ body.show-slide.day .light.light--animated {
   }
   .tutorial .text-content--auto .tutorial_arrow {
     left: auto;
-    top: auto;
+    top: 70%;
     width: 80px;
   }
   .tutorial .subtitle,
@@ -1379,7 +1382,7 @@ body.show-slide.day .light.light--animated {
 }
 
 .agree__text {
-  max-width: clamp(202px, 19.5313vw, 754px);
+  max-width: clamp(202px, 20.8333vw, 804px);
 }
 @media (max-width: 1279px) {
   .agree__text {
