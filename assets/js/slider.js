@@ -5,6 +5,9 @@ const nextButtons = document.querySelectorAll('[data-next]');
 const allSlides = document.querySelectorAll('.swiper-slide');
 const slideCollection = Array.from(allSlides).map((slide, index) => ({ index, theme: slide.dataset.theme, hash: slide.dataset.hash }));
 
+let activeSlideTimer = null;
+let slideViewTimer = null; // Таймер для просмотра слайда
+
 const onHashChange = () => {
   const hash = window.location.hash.split('#')[1];
   if (hash) {
@@ -22,6 +25,9 @@ const openSlide = hash => {
   document.body.classList.add('in-processe');
   document.body.classList.remove('show-slide');
 
+  // Сбрасываем предыдущий таймер просмотра слайда
+  clearTimeout(slideViewTimer);
+
   setTimeout(() => {
     if (activeSlides.length > 0) {
       activeSlides.forEach(slide => {
@@ -37,7 +43,13 @@ const openSlide = hash => {
       targetSlide.classList.add('swiper-slide-active');
     }
     document.body.classList.remove('in-processe');
+
+    // Запускаем новый таймер просмотра слайда
+    slideViewTimer = setTimeout(() => {
+      handleSlideViewed(targetSlide);
+    }, 3000);
   }, 610);
+
 };
 
 const changeTheme = theme => {
@@ -64,6 +76,68 @@ const goToNextSlide = () => {
     const nextHash = slideCollection[currentIndex + 1].hash;
     window.location.hash = nextHash;
   }, duration);
+};
+
+const handleSlideViewed = (slide) => {
+  const hash = slide.dataset.hash;
+  console.log(`Слайд с hash "${hash}" просмотрен 3 секунды`);
+
+  switch (hash) {
+    case 'welcome':
+      // Здесь можно добавить дополнительную логику
+      // Например, зарегистрировать событие или выполнить другое действие
+      registerEvent(`StartPageViewed`);
+        break;
+    case 'fobia-price':
+        registerEvent(`1FearPageViewed`);
+        break;
+    case 'fobia-price-is-done':
+        registerEvent(`1SolutionPageViewed`);
+        break;
+    case 'fobia-pets':
+        registerEvent(`2FearPageViewed`);
+        break;
+    case 'fobia-pets-is-done':
+        registerEvent(`2SolutionPageViewed`);
+        break;
+    case 'fobia-party':
+        registerEvent(`3FearPageViewed`);
+        break;
+    case 'fobia-party-is-done':
+        registerEvent(`3SolutionPageViewed`);
+        registerEvent(`PopUpWithContestViewed`);
+        break;
+    case 'fobia-letter':
+        registerEvent(`4FearPageViewed`);
+        break;
+    case 'fobia-letter-is-done':
+        registerEvent(`4SolutionPageViewed`);
+        break;
+    case 'fobia-person':
+        registerEvent(`5FearPageViewed`);
+        break;
+    case 'fobia-person-is-done':
+        registerEvent(`5SolutionPageViewed`);
+        break;
+    case 'fobia-key':
+        registerEvent(`6FearPageViewed`);
+        break;
+    case 'fobia-key-is-done':
+        registerEvent(`6SolutionPageViewed`);
+        break;
+    case 'fobia-neighbours':
+        registerEvent(`7FearPageViewed`);
+        break;
+    case 'fobia-neighbours-is-done':
+        registerEvent(`7SolutionPageViewed`);
+        break;
+    case 'subscribe':
+        registerEvent(`FinalPageViewed`);
+        break;
+    default:
+        throw new Error(`Неизвестный data-hash=${hash}`)
+  }
+
 };
 
 document.addEventListener('DOMContentLoaded', onHashChange);
