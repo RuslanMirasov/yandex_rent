@@ -49,7 +49,6 @@ const openSlide = hash => {
       handleSlideViewed(targetSlide);
     }, 3000);
   }, 610);
-
 };
 
 const changeTheme = theme => {
@@ -78,66 +77,67 @@ const goToNextSlide = () => {
   }, duration);
 };
 
-const handleSlideViewed = (slide) => {
+const handleSlideViewed = slide => {
   const hash = slide.dataset.hash;
   console.log(`Слайд с hash "${hash}" просмотрен 3 секунды`);
 
-  switch (hash) {
-    case 'welcome':
-      // Здесь можно добавить дополнительную логику
-      // Например, зарегистрировать событие или выполнить другое действие
-      registerEvent(`StartPageViewed`);
+  if (hash) {
+    switch (hash) {
+      case 'welcome':
+        // Здесь можно добавить дополнительную логику
+        // Например, зарегистрировать событие или выполнить другое действие
+        registerEvent(`StartPageViewed`);
         break;
-    case 'fobia-price':
+      case 'fobia-price':
         registerEvent(`1FearPageViewed`);
         break;
-    case 'fobia-price-is-done':
+      case 'fobia-price-is-done':
         registerEvent(`1SolutionPageViewed`);
         break;
-    case 'fobia-pets':
+      case 'fobia-pets':
         registerEvent(`2FearPageViewed`);
         break;
-    case 'fobia-pets-is-done':
+      case 'fobia-pets-is-done':
         registerEvent(`2SolutionPageViewed`);
         break;
-    case 'fobia-party':
+      case 'fobia-party':
         registerEvent(`3FearPageViewed`);
         break;
-    case 'fobia-party-is-done':
+      case 'fobia-party-is-done':
         registerEvent(`3SolutionPageViewed`);
         registerEvent(`PopUpWithContestViewed`);
         break;
-    case 'fobia-letter':
+      case 'fobia-letter':
         registerEvent(`4FearPageViewed`);
         break;
-    case 'fobia-letter-is-done':
+      case 'fobia-letter-is-done':
         registerEvent(`4SolutionPageViewed`);
         break;
-    case 'fobia-person':
+      case 'fobia-person':
         registerEvent(`5FearPageViewed`);
         break;
-    case 'fobia-person-is-done':
+      case 'fobia-person-is-done':
         registerEvent(`5SolutionPageViewed`);
         break;
-    case 'fobia-key':
+      case 'fobia-key':
         registerEvent(`6FearPageViewed`);
         break;
-    case 'fobia-key-is-done':
+      case 'fobia-key-is-done':
         registerEvent(`6SolutionPageViewed`);
         break;
-    case 'fobia-neighbours':
+      case 'fobia-neighbours':
         registerEvent(`7FearPageViewed`);
         break;
-    case 'fobia-neighbours-is-done':
+      case 'fobia-neighbours-is-done':
         registerEvent(`7SolutionPageViewed`);
         break;
-    case 'subscribe':
+      case 'subscribe':
         registerEvent(`FinalPageViewed`);
         break;
-    default:
-        throw new Error(`Неизвестный data-hash=${hash}`)
+      default:
+        throw new Error(`Неизвестный data-hash=${hash}`);
+    }
   }
-
 };
 
 document.addEventListener('DOMContentLoaded', onHashChange);
