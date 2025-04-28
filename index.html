@@ -44,6 +44,7 @@
     />
     <meta property="og:image" content="https://arenda.yandex.ru/stoparendophobia/assets/img/opengraph.jpg" />
     <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./assets/css/cookieWidget.min.css" />
     <link rel="stylesheet" href="./assets/css/styles.min.css?v=1.0.5" />
     <title>Попрощайтесь с арендофобией: сдавайте квартиру без страха</title>
   </head>
@@ -790,7 +791,17 @@
         <path d="M76 2L54 49" stroke="white" stroke-width="4" />
       </symbol>
     </svg>
-
+    <script src="./assets/js/cookieData.js"></script>
+    <script src="./assets/js/cookieWidget.js"></script>
+    <script>
+      CookieWidget.init({
+        primaryColor: '#350779',
+        logoBackground: '#eee',
+        logoUrl: './assets/img/logo.png',
+        policyUrl: 'https://yandex.ru/legal/lease_termsofuse/?lang=ru',
+        cookieData: window.cookieData,
+      });
+    </script>
     <script src="./assets/js/scripts.js?v=1.0.5" type="module"></script>
     <script src="./assets/js/slider.js?v=1.0.5" type="module"></script>
     <script src="./assets/js/forms.js?v=1.0.5" type="module"></script>
