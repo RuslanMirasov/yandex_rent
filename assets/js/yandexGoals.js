@@ -4,28 +4,28 @@ document.querySelector('.logo').addEventListener('click', () => registerEvent('C
 //Клик «Начать» на стартовой - ClickOnStartButton
 document.querySelector('#startButton').addEventListener('click', () => registerEvent('ClickOnStartButton'));
 
-//Клик «развеять страх» на онбординге - ClickOnTurnLightButtonOnboarding
+//Клик «Развеять страх» на онбординге - ClickOnTurnLightButtonOnboarding
 //document.querySelector('#turnLightButtonOnboarding').addEventListener('click', () => registerEvent('ClickOnTurnLightButtonOnboarding'));
 
-//Клик «развеять страх» в 1 вопросe - ClickOnTurnLightInQuestion1
+//Клик «Развеять страх» в 1 вопросe - ClickOnTurnLightInQuestion1
 document.querySelector('#turnLightInQuestion1').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion1'));
 
-//Клик «развеять страх» в 2 вопросe - ClickOnTurnLightInQuestion2
+//Клик «Развеять страх» в 2 вопросe - ClickOnTurnLightInQuestion2
 document.querySelector('#turnLightInQuestion2').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion2'));
 
-//Клик «развеять страх» в 3 вопросe - ClickOnTurnLightInQuestion2
+//Клик «Развеять страх» в 3 вопросe - ClickOnTurnLightInQuestion2
 document.querySelector('#turnLightInQuestion3').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion3'));
 
-//Клик «развеять страх» в 4 вопросe - ClickOnTurnLightInQuestion4
+//Клик «Развеять страх» в 4 вопросe - ClickOnTurnLightInQuestion4
 document.querySelector('#turnLightInQuestion4').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion4'));
 
-//Клик «развеять страх» в 5 вопросe - ClickOnTurnLightInQuestion5
+//Клик «Развеять страх» в 5 вопросe - ClickOnTurnLightInQuestion5
 document.querySelector('#turnLightInQuestion5').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion5'));
 
-//Клик «развеять страх» в 6 вопросe - ClickOnTurnLightInQuestion6
+//Клик «Развеять страх» в 6 вопросe - ClickOnTurnLightInQuestion6
 document.querySelector('#turnLightInQuestion6').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion6'));
 
-//Клик «развеять страх» в 7 вопросe - ClickOnTurnLightInQuestion7
+//Клик «Развеять страх» в 7 вопросe - ClickOnTurnLightInQuestion7
 document.querySelector('#turnLightInQuestion7').addEventListener('click', () => registerEvent('ClickOnTurnLightInQuestion7'));
 
 //Клик по подарку - ClickOnPresent
