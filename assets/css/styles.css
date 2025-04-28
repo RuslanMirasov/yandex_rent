@@ -1351,6 +1351,10 @@ body.show-slide.day .light.light--animated {
   opacity: 0;
 }
 
+.night .input {
+  color: var(--viola);
+}
+
 .radio,
 .checkbox {
   display: none;
