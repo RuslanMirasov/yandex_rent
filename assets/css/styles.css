@@ -1448,6 +1448,11 @@ body.show-slide.day .light.light--animated {
 }
 @media (max-width: 1279px) {
   .agree__text {
+    max-width: 360px;
+  }
+}
+@media (max-width: 767px) {
+  .agree__text {
     max-width: 202px;
   }
 }
@@ -1640,6 +1645,11 @@ body.locked {
 @media (max-width: 500px) {
   .popup {
     width: 100%;
+  }
+  .popup #ok,
+.popup #error {
+    margin: 0 auto;
+    max-width: 360px;
   }
 }
 
