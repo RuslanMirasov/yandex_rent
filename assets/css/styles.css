@@ -1756,3 +1756,209 @@ body.locked {
 #error .popup-close {
   background: #fff;
 }
+
+.yellow {
+  color: var(--bg-form);
+}
+
+@media (min-width: 1280px) {
+  .main.main--stub {
+    padding-bottom: clamp(20px, 7.8125vw, 302px);
+  }
+}
+.content.content--stub {
+  min-height: auto;
+  border-radius: clamp(30px, 4.1667vw, 161px);
+}
+.content.content--stub .swiper-slide {
+  flex: none;
+  padding-bottom: clamp(20px, 3.125vw, 121px);
+}
+@media (min-width: 1280px) {
+  .content.content--stub .swiper-slide {
+    padding-top: clamp(0px, 2.8125vw, 109px);
+    padding-left: clamp(20px, 3.125vw, 121px);
+    padding-right: clamp(20px, 3.125vw, 121px);
+  }
+}
+.content.content--stub .welcome-grid {
+  align-items: flex-start;
+}
+.content.content--stub .welcome-grid .text-content {
+  width: clamp(375px, 39.5833vw, 1528px);
+}
+.content.content--stub .welcome-grid .subscribe-form {
+  width: clamp(320px, 22.3958vw, 864px);
+}
+.content.content--stub .subscribe-form .input {
+  max-height: 70px;
+}
+.content.content--stub .subscribe-form .submit {
+  height: clamp(50px, 3.6458vw, 141px);
+  font-size: clamp(26px, 1.875vw, 72px);
+}
+.content.content--stub .subscribe-form .submit:before, .content.content--stub .subscribe-form .submit:after {
+  width: clamp(0px, 0.9375vw, 36px);
+  height: clamp(0px, 1.5625vw, 60px);
+}
+
+.slideImage--stub {
+  width: clamp(0px, 39.5833vw, 1528px);
+  position: absolute;
+  bottom: 0px;
+}
+.slideImage--stub img {
+  max-width: 98%;
+}
+
+.slideImage--stubtext {
+  max-width: 100%;
+  height: clamp(0px, 8.8542vw, 342px);
+  margin: 0 auto;
+}
+.slideImage--stubtext img {
+  height: 100%;
+}
+
+.socials {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 38px;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding-top: 34px;
+}
+.socials li {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+.socials a {
+  display: block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #fff;
+  transition: 0.3s;
+}
+.socials a:hover {
+  background: var(--bg-form);
+}
+.socials a img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1279px) {
+  .content.content--stub .swiper-slide {
+    flex: none;
+    padding-bottom: clamp(20px, 3.125vw, 121px);
+  }
+  .content.content--stub .welcome-grid {
+    align-items: flex-start;
+  }
+  .content.content--stub .welcome-grid .text-content {
+    width: 100%;
+  }
+  .content.content--stub .welcome-grid .title.title--h1 {
+    font-size: 40px;
+  }
+  .content.content--stub .welcome-grid .subscribe-form {
+    width: 100%;
+  }
+  .content.content--stub .welcome-grid .subscribe-form .form-description {
+    max-width: 320px;
+    color: #350779;
+  }
+  .content.content--stub .welcome-grid .subscribe-form br {
+    display: none;
+  }
+  .slideImage--stub {
+    width: 100%;
+    position: relative;
+    margin-bottom: -30px;
+    margin-top: 30px;
+  }
+  .slideImage--stub img {
+    max-width: 100%;
+  }
+  .slideImage--stubtext {
+    position: absolute;
+    bottom: 100%;
+    right: 14px;
+    height: 114px;
+    margin-bottom: -60px;
+  }
+  .socials {
+    gap: 38px;
+    position: relative;
+    top: 0%;
+    padding-top: 34px;
+  }
+  .socials li {
+    width: 40px;
+    height: 40px;
+  }
+  .socials a {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .content.content--stub .swiper-slide {
+    overflow: hidden;
+  }
+  .content.content--stub .swiper-slide {
+    padding-bottom: clamp(38px, 3.125vw, 121px);
+  }
+  .content.content--stub .welcome-grid .subscribe-form {
+    margin-top: 80px;
+  }
+  .content.content--stub .welcome-grid .title.title--h1 {
+    font-size: 30px;
+  }
+  .content.content--stub .welcome-grid .subtitle {
+    font-size: 14px;
+  }
+  .content.content--stub .welcome-grid .subtitle span {
+    display: inline;
+  }
+  .slideImage--stub {
+    position: relative;
+    margin-bottom: -20px;
+    margin-top: 30px;
+  }
+  .slideImage--stub img {
+    position: relative;
+    left: 53%;
+    transform: translate(-50%, 0%);
+    max-width: 430px;
+  }
+  .slideImage--stubtext {
+    position: absolute;
+    bottom: 100%;
+    right: 0px;
+    height: 94px;
+    margin-bottom: -30px;
+  }
+  .socials {
+    gap: 38px;
+    position: relative;
+    top: 0%;
+    padding-top: 34px;
+  }
+  .socials li {
+    width: 40px;
+    height: 40px;
+  }
+  .socials a {
+    width: 40px;
+    height: 40px;
+  }
+}

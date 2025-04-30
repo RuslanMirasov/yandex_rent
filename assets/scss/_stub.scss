@@ -1,0 +1,222 @@
+.yellow {
+  color: var(--bg-form);
+}
+
+@media (min-width: 1280px) {
+  .main.main--stub {
+    padding-bottom: myclamp(20px, 150px, 1920px, 3860px);
+  }
+}
+
+.content.content--stub {
+  min-height: auto;
+  border-radius: myclamp(30px, 80px, 1920px, 3860px);
+  .swiper-slide {
+    flex: none;
+    @media (min-width: 1280px) {
+      padding-top: myclamp(0px, 54px, 1920px, 3860px);
+      padding-left: myclamp(20px, 60px, 1920px, 3860px);
+      padding-right: myclamp(20px, 60px, 1920px, 3860px);
+    }
+
+    padding-bottom: myclamp(20px, 60px, 1920px, 3860px);
+  }
+  .welcome-grid {
+    align-items: flex-start;
+    .text-content {
+      width: myclamp(375px, 760px, 1920px, 3860px);
+    }
+    .subscribe-form {
+      width: myclamp(320px, 430px, 1920px, 3860px);
+    }
+  }
+
+  .subscribe-form {
+    .input {
+      max-height: 70px;
+    }
+    .submit {
+      height: myclamp(50px, 70px, 1920px, 3860px);
+      font-size: myclamp(26px, 36px, 1920px, 3860px);
+      &:before,
+      &:after {
+        width: myclamp(0px, 18px, 1920px, 3860px);
+        height: myclamp(0px, 30px, 1920px, 3860px);
+      }
+    }
+  }
+}
+
+.slideImage--stub {
+  width: myclamp(0px, 760px, 1920px, 3860px);
+  position: absolute;
+  bottom: 0px;
+  img {
+    max-width: 98%;
+  }
+}
+
+.slideImage--stubtext {
+  max-width: 100%;
+  height: myclamp(0px, 170px, 1920px, 3860px);
+  margin: 0 auto;
+  img {
+    height: 100%;
+  }
+}
+
+.socials {
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 38px;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  padding-top: 34px;
+  li {
+    display: block;
+    width: 48px;
+    height: 48px;
+  }
+  a {
+    display: block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #fff;
+    transition: 0.3s;
+    &:hover {
+      background: var(--bg-form);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .content.content--stub {
+    .swiper-slide {
+      flex: none;
+      padding-bottom: myclamp(20px, 60px, 1920px, 3860px);
+    }
+    .welcome-grid {
+      align-items: flex-start;
+      .text-content {
+        width: 100%;
+      }
+      .title.title--h1 {
+        font-size: 40px;
+      }
+      .subscribe-form {
+        width: 100%;
+        .form-description {
+          max-width: 320px;
+          color: #350779;
+        }
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .slideImage--stub {
+    width: 100%;
+    position: relative;
+    margin-bottom: -30px;
+    margin-top: 30px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .slideImage--stubtext {
+    position: absolute;
+    bottom: 100%;
+    right: 14px;
+    height: 114px;
+    margin-bottom: -60px;
+  }
+
+  .socials {
+    gap: 38px;
+    position: relative;
+    top: 0%;
+    padding-top: 34px;
+    li {
+      width: 40px;
+      height: 40px;
+    }
+    a {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .content.content--stub {
+    .swiper-slide {
+      overflow: hidden;
+    }
+    .swiper-slide {
+      padding-bottom: myclamp(38px, 60px, 1920px, 3860px);
+    }
+    .welcome-grid {
+      .subscribe-form {
+        margin-top: 80px;
+      }
+      .title.title--h1 {
+        font-size: 30px;
+      }
+      .subtitle {
+        font-size: 14px;
+        span {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .slideImage--stub {
+    position: relative;
+    margin-bottom: -20px;
+    margin-top: 30px;
+    img {
+      position: relative;
+      left: 53%;
+      transform: translate(-50%, 0%);
+      max-width: 430px;
+    }
+  }
+
+  .slideImage--stubtext {
+    position: absolute;
+    bottom: 100%;
+    right: 0px;
+    height: 94px;
+    margin-bottom: -30px;
+  }
+
+  .socials {
+    gap: 38px;
+    position: relative;
+    top: 0%;
+    padding-top: 34px;
+    li {
+      width: 40px;
+      height: 40px;
+    }
+    a {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
