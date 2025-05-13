@@ -131,6 +131,12 @@ body {
   overflow-y: auto;
 }
 
+html,
+body {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+
 img {
   display: block;
   max-width: 100%;
