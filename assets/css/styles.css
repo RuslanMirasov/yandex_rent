@@ -131,12 +131,6 @@ body {
   overflow-y: auto;
 }
 
-html,
-body {
-  -ms-scroll-chaining: none;
-      overscroll-behavior: none;
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -541,6 +535,7 @@ body.show-slide .logo {
   right: 0px;
   bottom: 0px;
   height: 100%;
+  will-change: height;
 }
 @media (max-width: 767px) {
   .background {
@@ -568,24 +563,29 @@ body.show-slide .logo {
   }
 }
 .background .background__night {
-  background: url("../img/web.webp") no-repeat right top/cover;
+  background: var(--bg) url("../img/web.webp") no-repeat right top/cover;
 }
 @media (max-width: 767px) {
   .background .background__night {
-    background: url("../img/svg/web.svg") no-repeat right top;
+    background: var(--bg) url("../img/svg/web.svg") no-repeat right top;
     background-size: 768px auto;
   }
 }
 .background .background__day {
-  background: url("../img/sun.webp") no-repeat right top/cover;
+  background: var(--bg) url("../img/sun.webp") no-repeat right top/cover;
 }
 @media (max-width: 767px) {
   .background .background__day {
-    background: url("../img/svg/sun.svg") no-repeat right top;
+    background: var(--bg) url("../img/svg/sun.svg") no-repeat right top;
     background-size: 768px auto;
   }
 }
 
+@media screen and (max-height: 668px) and (max-width: 767px) {
+  .background {
+    display: none !important;
+  }
+}
 body.show-slide.night .background__night {
   opacity: 1;
 }
@@ -969,14 +969,14 @@ body.show-slide.day .light.light--animated {
 
 .slideImage--welcome {
   width: 27%;
-  height: calc(100vh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
+  height: calc(100dvh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
   bottom: clamp(0px, 4.9479vw, 191px);
   right: 6%;
 }
 @media (max-height: 52.2vw) {
   .slideImage--welcome {
     width: 50%;
-    height: calc(100vh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
+    height: calc(100dvh - clamp(0px, 4.6875vw, 181px) - clamp(0px, 4.6875vw, 181px));
     right: calc(-1 * clamp(0px, 2.0833vw, 80px));
     top: calc(-1 * clamp(0px, 6.25vw, 241px));
     bottom: auto;
@@ -1916,6 +1916,7 @@ body.locked {
     flex-direction: column;
     padding-bottom: 0px;
     padding-top: 0px;
+    will-change: height;
   }
   .main.main--stub .content.content--stub {
     flex: 1;

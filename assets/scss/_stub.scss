@@ -167,9 +167,12 @@
     flex-direction: column;
     padding-bottom: 0px;
     padding-top: 0px;
+    will-change: height;
+
     .content.content--stub {
       flex: 1;
       border-radius: 45px 45px 0px 0px;
+
       @media (max-height: 668px) {
         border-radius: 0px 0px 0px 0px;
       }

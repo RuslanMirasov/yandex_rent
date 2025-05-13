@@ -6,6 +6,8 @@
   right: 0px;
   bottom: 0px;
   height: 100%;
+  will-change: height;
+
   @media (max-width: 767px) {
     height: calc(100% - 75px);
     bottom: calc(100% - 75px);
@@ -22,23 +24,32 @@
     width: 70%;
     height: 100%;
     opacity: 0;
+
     @media (max-width: 767px) {
       width: 100%;
     }
   }
   .background__night {
-    background: url('../img/web.webp') no-repeat right top/cover;
+    background: var(--bg) url('../img/web.webp') no-repeat right top/cover;
+
     @media (max-width: 767px) {
-      background: url('../img/svg/web.svg') no-repeat right top;
+      background: var(--bg) url('../img/svg/web.svg') no-repeat right top;
       background-size: 768px auto;
     }
   }
   .background__day {
-    background: url('../img/sun.webp') no-repeat right top/cover;
+    background: var(--bg) url('../img/sun.webp') no-repeat right top/cover;
     @media (max-width: 767px) {
-      background: url('../img/svg/sun.svg') no-repeat right top;
+      background: var(--bg) url('../img/svg/sun.svg') no-repeat right top;
       background-size: 768px auto;
     }
+  }
+}
+
+// ✅ вынесено за пределы .background
+@media screen and (max-height: 668px) and (max-width: 767px) {
+  .background {
+    display: none !important;
   }
 }
 
