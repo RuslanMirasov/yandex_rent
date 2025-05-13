@@ -162,6 +162,26 @@
 }
 
 @media (max-width: 767px) {
+  .main.main--stub {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    .content.content--stub {
+      flex: 1;
+      border-radius: 45px 45px 0px 0px;
+      @media (max-height: 668px) {
+        border-radius: 0px 0px 0px 0px;
+      }
+    }
+    .text-content {
+      gap: 10px;
+    }
+    .subscribe-form {
+      margin-top: 70px;
+      gap: 20px;
+    }
+  }
   .content.content--stub {
     .swiper-slide {
       overflow: hidden;
@@ -186,6 +206,7 @@
   }
 
   .slideImage--stub {
+    display: none;
     position: relative;
     margin-bottom: -20px;
     margin-top: 30px;
@@ -209,7 +230,7 @@
     gap: 38px;
     position: relative;
     top: 0%;
-    padding-top: 34px;
+    padding-top: 24px;
     li {
       width: 40px;
       height: 40px;
