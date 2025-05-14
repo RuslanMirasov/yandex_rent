@@ -27,13 +27,3 @@ export const subscribe = async (data, btn) => {
 };
 
 Popup.init('./components/popups.html', ['subscribe']);
-initCounterGoals();
-
-function initCounterGoals() {
-    Array.from(document.getElementsByClassName('submit')).forEach((el) => {
-        el.onclick = ym(100828736, 'reachGoal', 'SentForm');
-    });
-    document.getElementById('logo').onclick = ym(100828736, 'reachGoal', 'LogoClick');
-    document.getElementById('tgLink').onclick = ym(100828736, 'reachGoal', 'TgClick');
-    document.getElementById('vkLink').onclick = ym(100828736, 'reachGoal', 'VkClick');
-}
