@@ -30,10 +30,24 @@ Popup.init('./components/popups.html', ['subscribe']);
 initCounterGoals();
 
 function initCounterGoals() {
-    Array.from(document.getElementsByClassName('submit')).forEach((el) => {
-        el.onclick = ym(100828736, 'reachGoal', 'SentForm');
-    });
-    document.getElementById('logo').onclick = ym(100828736, 'reachGoal', 'LogoClick');
-    document.getElementById('tgLink').onclick = ym(100828736, 'reachGoal', 'TgClick');
-    document.getElementById('vkLink').onclick = ym(100828736, 'reachGoal', 'VkClick');
+    var submitBtnsArray = document.getElementsByClassName('submit');
+    var logo = document.getElementById('logo')
+    var tgLink = document.getElementsByClassName('tgLink');
+    var vkLink = document.getElementsByClassName('vkLink');
+
+    if (submitBtnsArray.length > 0) {
+        Array.from(submitBtnsArray).forEach((el) => {
+            addListenerForCounter(el, 'SentForm');
+        });
+    }
+
+    addListenerForCounter(logo, 'LogoClick');
+    addListenerForCounter(tgLink, 'TgClick');
+    addListenerForCounter(vkLink, 'VkClick');
+}
+
+function addListenerForCounter(element, eventName) {
+    if (element) {
+        element.onclick = ym(100828736, 'reachGoal', eventName);
+    }
 }
