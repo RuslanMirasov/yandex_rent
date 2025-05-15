@@ -1,4 +1,4 @@
-//Клик по логотипу в шапке - ClickOnLogoInHeader
+﻿//Клик по логотипу в шапке - ClickOnLogoInHeader
 document.querySelector('.logo').addEventListener('click', () => registerEvent('ClickOnLogoInHeader'));
 
 //Клик «Начать» на стартовой - ClickOnStartButton

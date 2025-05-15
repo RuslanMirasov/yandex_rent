@@ -48,6 +48,6 @@ function initCounterGoals() {
 
 function addListenerForCounter(element, eventName) {
     if (element) {
-        element.onclick = ym(100828736, 'reachGoal', eventName);
+        element.onclick = ym(100726105, 'reachGoal', eventName);
     }
 }
